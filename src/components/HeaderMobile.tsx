@@ -6,7 +6,7 @@ const HeaderMobile = () => {
 
   return (
     <motion.nav
-      className='lg:hidden flex p-10 flex-col items-center gap-4 font-poppins text-lg text-green1 font-semibold bg-white bg-opacity-55 shadow-md absolute w-full top-[65px] left-0 z-40'
+      className='lg:hidden flex p-10 flex-col items-center gap-4 font-poppins text-lg text-green1 font-semibold bg-gray-200 shadow-md absolute w-full top-[65px] left-0 z-40'
       initial={{ opacity: 0, y: -30}} 
       animate={{ opacity: 1, y: 0 }} 
       transition={{ duration: 0.3, delay: 0.1 }} 
