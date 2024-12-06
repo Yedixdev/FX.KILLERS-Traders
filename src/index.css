@@ -93,18 +93,18 @@
 .title-home-section {
   background: linear-gradient(
     90deg,
-    #ae6608,
-    #135a3a,
-    #054507,
-    #7e5602
-  ); /* Gradiente con colores destacados */
+    #135A3A, /* green1 */
+    #EAB642, /* yellow1 */
+    #012b20, /* green2 */
+    #135A3A  /* beige1 */
+  );  /* Gradiente con colores destacados */
   background-size: 400% 100%; /* Hace que el movimiento del gradiente sea más notable */
   -webkit-background-clip: text;
   color: transparent; /* El texto es visible solo a través del gradiente */
   text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7); /* Sombra inicial más marcada */
   display: inline-block;
   animation: gradientMove 5s ease-in-out infinite,
-    shadowPulse 5s ease-in-out infinite; /* Animaciones combinadas */
+    shadowPulse 8s ease-in-out infinite; /* Animaciones combinadas */
 }
 
 /* Animación del gradiente */
@@ -131,7 +131,23 @@
   }
 }
 
-/*Sombre verde-------------------------------------------------*/
+/*Sombre home verde-------------------------------------------------*/
 .shadow-home-green {
   box-shadow: 0 0 150px 200px rgba(19, 90, 58, 0.6); /* Sombra difuminada */
+}
+.shadow-home-green {
+  box-shadow: 0 0 150px 200px rgba(19, 90, 58, 0.6); /* Sombra inicial */
+  animation: pulsate-shadow 3s infinite; /* Animación continua */
+}
+
+@keyframes pulsate-shadow {
+  0% {
+    box-shadow: 0 0 150px 200px rgba(19, 90, 58, 0.6); /* Estado inicial */
+  }
+  50% {
+    box-shadow: 0 0 180px 230px rgba(19, 90, 58, 0.8); /* Más intensa */
+  }
+  100% {
+    box-shadow: 0 0 150px 200px rgba(19, 90, 58, 0.6); /* Vuelve al inicio */
+  }
 }

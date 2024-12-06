@@ -98,12 +98,12 @@ const Header = () => {
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 1.4 }}>
-            <Link
-            to="/contact"
-            className="bg-black text-gray-100 px-5 py-2 font-display rounded-full font-light hover:bg-yellow-600 hover:text-black transition duration-300 shadow-lg shadow-green1 hover:shadow-black transform hover:scale-110"
-            >
-              Confirm Us
-            </Link>
+              <Link
+              to="/contact"
+              className="bg-black text-gray-100 px-5 py-2 font-display rounded-full font-light hover:bg-yellow-600 hover:text-black transition duration-300 shadow-lg shadow-green1 hover:shadow-black transform hover:scale-110"
+              >
+                Confirm Us
+              </Link>
           </motion.div>
         </motion.div>
         <div className="lg:hidden">
