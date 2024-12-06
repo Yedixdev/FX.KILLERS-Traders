@@ -4,12 +4,12 @@ import { motion } from "framer-motion";
 
 const Welcome = () => {
   return (
-    <div className="w-full h-[600px] flex justify-center pt-8 relative">
+    <div className="w-full h-[600px] flex justify-center  relative">
       <motion.div
         className="bg-gray-300 w-[1300px] h-96 max-w-4xl lg:rounded-xl xl:rounded-xl flex flex-col items-center"
-        initial={{ opacity: 0, y: 50 }}  // Inicia desde abajo (y: 50)
-        animate={{ opacity: 1, y: 0 }}   // Llega a su posición original (y: 0)
-        transition={{ duration: 1, ease: "easeOut" }}  // Duración de la animación
+        initial={{ opacity: 0, y: 50 }}  
+        animate={{ opacity: 1, y: 0 }}   
+        transition={{ duration: 1, ease: "easeOut" }}  
       >
 
         {/* Clasificación */}
