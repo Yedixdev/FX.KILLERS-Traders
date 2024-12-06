@@ -1,0 +1,137 @@
+/* Fonts Playfair Display (titulos)*/
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=MuseoModerno:ital,wght@0,100..900;1,100..900&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+/* Fonts Poppins (cuerpo de texto) */
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=MuseoModerno:ital,wght@0,100..900;1,100..900&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+/* Fonts Roboto (cuerpo de texto) */
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=MuseoModerno:ital,wght@0,100..900;1,100..900&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.contact-home-highlight {
+  background: linear-gradient(
+    90deg,
+    #eab642,
+    #c7a17c,
+    #efdab8,
+    #eab642
+  ); /* Gradiente con los colores proporcionados */
+  background-size: 200% 100%; /* Hace que el gradiente se mueva */
+  -webkit-background-clip: text; /* Aplica el gradiente solo al texto */
+  color: transparent; /* Hace que el texto sea transparente para solo ver el gradiente */
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5); /* Sombra suave inicial */
+  display: inline-block; /* Asegura que el texto se pueda animar correctamente */
+  animation: gradientEffect 4s ease-in-out infinite,
+    shadowEffect 4s ease-in-out infinite; /* Animaciones combinadas */
+}
+
+/* Animación de gradiente */
+@keyframes gradientEffect {
+  0% {
+    background-position: 200% 0%; /* El gradiente comienza desde la derecha */
+  }
+  50% {
+    background-position: 0% 0%; /* El gradiente se mueve completamente */
+  }
+  100% {
+    background-position: 200% 0%; /* El gradiente regresa a la posición inicial */
+  }
+}
+
+@keyframes shadowEffect {
+  0% {
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+  }
+  50% {
+    text-shadow: 8px 8px 20px rgba(0, 0, 0, 0.8);
+  }
+  100% {
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* Boton con el estilo amarillo --------------------------------------------------- */
+.contact-btn-form-home {
+  background: linear-gradient(90deg, #eab642, #c7a17c, #efdab8, #eab642);
+  background-size: 200% 100%;
+  color: #333333;
+  font-size: 18px;
+  font-weight: 700;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+  animation: gradientEffect 4s ease-in-out infinite,
+    shadowEffect 4s ease-in-out infinite;
+}
+
+@keyframes gradientEffect {
+  0% {
+    background-position: 200% 0%;
+  }
+  50% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 200% 0%;
+  }
+}
+
+/* Estilos para los titulos verdes  --------------------------------------------- */
+.title-home-section {
+  background: linear-gradient(90deg, #197149, #012b20); /* Gradiente */
+  background-size: 200% 100%; /* Preparación para animación de gradiente */
+  -webkit-background-clip: text;
+  color: transparent; /* El texto se ve solo a través del gradiente */
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5); /* Sombra inicial */
+  display: inline-block;
+  animation: gradientMove 5s ease-in-out infinite,
+    shadowPulse 5s ease-in-out infinite; /* Animaciones combinadas */
+}
+
+/* Animación del gradiente */
+.title-home-section {
+  background: linear-gradient(
+    90deg,
+    #ae6608,
+    #135a3a,
+    #054507,
+    #7e5602
+  ); /* Gradiente con colores destacados */
+  background-size: 400% 100%; /* Hace que el movimiento del gradiente sea más notable */
+  -webkit-background-clip: text;
+  color: transparent; /* El texto es visible solo a través del gradiente */
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7); /* Sombra inicial más marcada */
+  display: inline-block;
+  animation: gradientMove 5s ease-in-out infinite,
+    shadowPulse 5s ease-in-out infinite; /* Animaciones combinadas */
+}
+
+/* Animación del gradiente */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 0%; /* Inicia desde la izquierda */
+  }
+  50% {
+    background-position: 100% 0%; /* Gradiente se mueve completamente hacia la derecha */
+  }
+  100% {
+    background-position: 0% 0%; /* Regresa a la posición inicial */
+  }
+}
+
+/* Animación de la sombra */
+@keyframes shadowPulse {
+  0%,
+  100% {
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7); /* Sombra suave */
+  }
+  50% {
+    text-shadow: 5px 5px 20px rgba(0, 0, 0, 0.9); /* Sombra más intensa */
+  }
+}
+
+/*Sombre verde-------------------------------------------------*/
+.shadow-home-green {
+  box-shadow: 0 0 150px 200px rgba(19, 90, 58, 0.6); /* Sombra difuminada */
+}
