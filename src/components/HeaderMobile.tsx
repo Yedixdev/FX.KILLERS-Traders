@@ -41,8 +41,8 @@ const HeaderMobile = () => {
         transition={{ duration: 0.5, delay: 0.6 }}
       >
         <Link className="relative group transition duration-300 ease-in-out hover:text-yellow-600" 
-        to="/FAQ">
-          FAQ
+        to="/FAQs">
+          FAQs
           <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-600 transition-all duration-300 group-hover:w-full"/>
         </Link>
       </motion.div>
