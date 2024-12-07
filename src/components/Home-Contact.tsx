@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import BoxImg from '../assets/img/box-img.png'
 
 const AboutMe = () => {
   const [email, setEmail] = useState<string>("");  
@@ -46,20 +45,7 @@ const AboutMe = () => {
   };
 
   return (
-    <div className="w-2xl bg-gradient-to-r from-[#197149] to-[#012b20] h-auto m-5 rounded-2xl flex justify-center items-center flex-col gap-5 py-5">
-      <div className="w-full flex  justify-around">
-        <div><div>
-      <h1>Mi imagen en React</h1>
-      <img src={BoxImg} alt="Caja" style={{ width: '200px', height: 'auto' }} />
-    </div></div>
-        <div>
-          <div>Sobre mi</div>
-          <div className="w-[500px]"> 
-            <span >Me chamo Washington Henrique Fernandes de Sousa, mas pode me chamar apenas de Henrique. Prazer!</span>
-            <span>Há mais de 2 anos desenvolvendo e programando interfaces com JavaScript, React JS e Typescript. Graduado em Análise e Desenvolvimento de Sistemas pela Fatec de São José dos Campos Interesses em desenvolvimento Front-end com React, React Native, VueJS e UX/UI Design. Tentando ser um pouquinho melhor do que ontem todos dias.</span>
-‍          </div> 
-        </div>
-      </div>
+    <div className="w-2xl bg-gradient-to-r from-[#197149] to-[#012b20] h-auto m-4 rounded-2 xl flex justify-center items-center flex-col gap-5 p-8">
       <div className="text-5xl font-bold font-display text-gray-300 text-center">
         <span className="contact-home-highlight">Mantente</span> en contacto
       </div>
