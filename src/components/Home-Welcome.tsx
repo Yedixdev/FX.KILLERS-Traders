@@ -1,12 +1,14 @@
 import { FaStar } from "react-icons/fa";
 import ShimmerButton from "./ui/shimmer-button";
 import { motion } from "framer-motion";
+import TypingAnimation from "./ui/typing-animation";
+import BlurIn from "./ui/blur-in";
 
 const Welcome = () => {
   return (
     <div className="w-full h-[600px] flex justify-center  relative">
       <motion.div
-        className="bg-gray-300 w-[1300px] h-96 max-w-4xl lg:rounded-xl xl:rounded-xl flex flex-col items-center"
+        className="bg-gray-300 h-[450px] w-[1000px] lg:rounded-xl xl:rounded-xl flex flex-col items-center"
         initial={{ opacity: 0, y: 50 }}  
         animate={{ opacity: 1, y: 0 }}   
         transition={{ duration: 1, ease: "easeOut" }}  
@@ -22,14 +24,15 @@ const Welcome = () => {
             <ShimmerButton background="#135A3A">
                <div className="flex gap-2 items-center">
                   <FaStar className="text-xl" />
-                  <div className="font-poppins text-gray-100">5/5 Clasificación</div>
+                  <BlurIn className="font-poppins text-gray-100"
+                  word="5/5 Clasificación"/>
                </div>
             </ShimmerButton>
          </motion.div>
 
         {/* Título principal */}
         <motion.div
-          className="title-home-section text-3xl md:text-5xl font-bold font-display text-center relative z-10 p-2"
+          className="title-home-section text-4xl md:text-6xl font-bold font-display text-center relative z-10 p-2"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
@@ -39,12 +42,15 @@ const Welcome = () => {
 
         {/* Subtítulo */}
         <motion.div
-          className="font-poppins font-semibold text-lg md:text-xl pt-5 text-center text-green1 relative z-10"
+          
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
         >
-          Comunidad exclusiva + Educación Financiera
+          <TypingAnimation
+          className="font-poppins font-semibold text-lg md:text-xl pt-5 text-center text-green1 relative z-10"
+          text="Comunidad exclusiva + Educación Financiera"
+          />
         </motion.div>
 
         {/* Formulario */}

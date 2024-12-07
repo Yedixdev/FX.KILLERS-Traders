@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-    darkMode: ["class"],
-    content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  darkMode: ["class"],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
   	extend: {
   		colors: {
@@ -12,6 +12,7 @@ export default {
   			yellow1: '#EAB642',
   			beige1: '#C7A17C',
   			beige2: '#EFDAB8',
+  			greentext: 'linear-gradient(to right, black, #052e16, black)',
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
@@ -54,7 +55,8 @@ export default {
   			}
   		},
   		backgroundImage: {
-  			'gradient-green': 'linear-gradient(90deg, #197149, #012b20)'
+  			'gradient-green': 'linear-gradient(90deg, #197149, #012b20)',
+  			greentext: 'linear-gradient(to right, black, #052e16, black)'
   		},
   		fontFamily: {
   			display: ["Playfair Display", "serif"],
@@ -70,7 +72,8 @@ export default {
   			'shimmer-slide': 'shimmer-slide var(--speed) ease-in-out infinite alternate',
   			'spin-around': 'spin-around calc(var(--speed) * 2) infinite linear',
   			marquee: 'marquee var(--duration) infinite linear',
-  			'marquee-vertical': 'marquee-vertical var(--duration) linear infinite'
+  			'marquee-vertical': 'marquee-vertical var(--duration) linear infinite',
+  			'border-beam': 'border-beam calc(var(--duration)*1s) infinite linear'
   		},
   		keyframes: {
   			'shimmer-slide': {
@@ -106,6 +109,11 @@ export default {
   				},
   				to: {
   					transform: 'translateY(calc(-100% - var(--gap)))'
+  				}
+  			},
+  			'border-beam': {
+  				'100%': {
+  					'offset-distance': '100%'
   				}
   			}
   		}

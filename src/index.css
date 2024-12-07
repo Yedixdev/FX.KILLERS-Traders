@@ -15,9 +15,9 @@
   background: linear-gradient(
     90deg,
     #eab642,
-    #c7a17c,
-    #efdab8,
-    #eab642
+    #ffd1a4,
+    #ffe0aa,
+    #e7b209
   ); /* Gradiente con los colores proporcionados */
   background-size: 200% 100%; /* Hace que el gradiente se mueva */
   -webkit-background-clip: text; /* Aplica el gradiente solo al texto */
@@ -57,7 +57,7 @@
 .contact-btn-form-home {
   background: linear-gradient(90deg, #eab642, #c7a17c, #efdab8, #eab642);
   background-size: 200% 100%;
-  color: #333333;
+  color: #101010;
   font-size: 18px;
   font-weight: 700;
   text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
@@ -65,17 +65,25 @@
     shadowEffect 4s ease-in-out infinite;
 }
 
-@keyframes gradientEffect {
-  0% {
-    background-position: 200% 0%;
-  }
-  50% {
-    background-position: 0% 0%;
-  }
-  100% {
-    background-position: 200% 0%;
-  }
+.btn-about-us {
+  background: linear-gradient(90deg, #000000, #555555, #000000, #000000);
+  background-size: 200% 100%;
+  font-size: 18px;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+  animation: gradientEffect 4s ease-in-out infinite, shadowEffect 4s ease-in-out infinite;
+  transition: transform 2s ease, box-shadow 2s ease, background-color 2s ease, color 2s ease, font-weight 2s ease, background-size 2s ease;
+  border-radius: 8px; 
 }
+
+.btn-about-us:hover {
+  background: linear-gradient(90deg, #eab642, #c7a17c, #efdab8, #eab642);
+  color: #000000;
+  font-weight: 600;
+  background-size: 200% 100%;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3); 
+}
+
 
 /* Estilos para los titulos verdes  --------------------------------------------- */
 .title-home-section {
@@ -93,11 +101,11 @@
 .title-home-section {
   background: linear-gradient(
     90deg,
-    #135A3A, /* green1 */
-    #EAB642, /* yellow1 */
-    #012b20, /* green2 */
-    #135A3A  /* beige1 */
-  );  /* Gradiente con colores destacados */
+    #135a3a,
+    /* green1 */ #eab642,
+    /* yellow1 */ #012b20,
+    /* green2 */ #135a3a /* beige1 */
+  ); /* Gradiente con colores destacados */
   background-size: 400% 100%; /* Hace que el movimiento del gradiente sea más notable */
   -webkit-background-clip: text;
   color: transparent; /* El texto es visible solo a través del gradiente */
@@ -133,9 +141,6 @@
 
 /*Sombre home verde-------------------------------------------------*/
 .shadow-home-green {
-  box-shadow: 0 0 150px 200px rgba(19, 90, 58, 0.6); /* Sombra difuminada */
-}
-.shadow-home-green {
   box-shadow: 0 0 150px 200px rgba(19, 90, 58, 0.6); /* Sombra inicial */
   animation: pulsate-shadow 3s infinite; /* Animación continua */
 }
@@ -151,3 +156,11 @@
     box-shadow: 0 0 150px 200px rgba(19, 90, 58, 0.6); /* Vuelve al inicio */
   }
 }
+
+.shadow-programs {
+    box-shadow: 0 0 150px 120px rgba(50, 154, 107, 0.715); /* Sombra inicial */
+    width: 300px;
+  }
+  
+    
+

@@ -4,6 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion'; 
 // import { FaYoutube, FaInstagram, FaDiscord } from 'react-icons/fa'; 
 import { MdMenuOpen, MdClose } from "react-icons/md";
+import { BorderBeam } from './ui/border-beam';
 import HeaderMobile from "./HeaderMobile";
 
 const Header = () => {
@@ -57,17 +58,18 @@ const Header = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 + 0.2 * index }} 
           >
+            <div>
+            
             <Link
+            
               to={item.path}
-              className={`relative group tracking-wide font-poppins px-2 transition-all duration-300 ease-in-out 
-                ${location.pathname === item.path ? 'text-yellow-600 font-semibold' : 'text-gray-50 hover:text-yellow-600'}`}
+              className={`relative group tracking-wide font-poppins px-5 py-2 rounded-xl transition-all duration-300 ease-in-out 
+                ${location.pathname === item.path ? 'text-yellow-500 font-semibold' : 'text-gray-50 hover:text-yellow-500'}`}
             >
               {item.name}
-              <span
-                className={`absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-600 transition-all duration-300 group-hover:w-full
-                  ${location.pathname === item.path ? 'w-full' : ''}`}
-              />
+              <BorderBeam/>
             </Link>
+            </div>
           </motion.div>
         ))}
       </motion.nav>
@@ -98,12 +100,11 @@ const Header = () => {
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 1.4 }}>
-              <Link
+            <Link
               to="/contact"
-              className="bg-black text-gray-100 px-5 py-2 font-display rounded-full font-light hover:bg-yellow-600 hover:text-black transition duration-300 shadow-lg shadow-green1 hover:shadow-black transform hover:scale-110"
-              >
-                Confirm Us
-              </Link>
+              className=" btn-about-us text-gray-50 px-5 py-2 font-poppins rounded-full">
+              Confirm Us
+            </Link>
           </motion.div>
         </motion.div>
         <div className="lg:hidden">
