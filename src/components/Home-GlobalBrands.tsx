@@ -36,6 +36,7 @@ const GlobalBrands: React.FC = () => {
       transition={{ duration: 0.5 }}
       className="bg-gradient-green h-auto w-full xl:w-[1250px] py-5 px-4 flex flex-col items-center relative z-10 xl:rounded-2xl overflow-hidden"
     >
+      <div className='font-poppins contact-home-highlight font-semibold lg:text-lg'>We Transport Confidence</div>
       {/* Título */}
       <div className="text-center ">
         <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-[42px] font-bold text-gray-200 font-display">
@@ -44,7 +45,12 @@ const GlobalBrands: React.FC = () => {
       </div>
 
       {/* Logos con Marquee */}
-      <div className="w-full overflow-hidden pt-4 relative z-10">
+      <motion.div
+      initial={{ opacity: 0, scale: 0.3 }}
+      whileInView={{ opacity: 1, scale: 1, y: 0 }}
+      viewport={{ once: false, amount: 0.2 }} 
+      transition={{ duration: 1.2, ease: "easeOut" }} 
+      className="w-full overflow-hidden pt-4 relative z-10">
         <Marquee>
           <div className="flex flex-wrap justify-center gap-6">
             {LogoItems.map((logo, index) => (
@@ -61,16 +67,28 @@ const GlobalBrands: React.FC = () => {
             ))}
           </div>
         </Marquee>
-      </div>
+      </motion.div>
 
       <div className="flex flex-col justify-center items-center ">
         <h3 className="text-2xl sm:text-3xl lg:text-4xl xl:text-[40px]  font-bold text-gray-100 flex gap-3 pb-5 font-display">
           <span className="contact-home-highlight font-display">Programas</span> Destacados
         </h3>
 
-        <div className="w-full max-w-md md:max-w-3xl bg-transparent rounded-2xl border-2 border-green-700 flex flex-col justify-around items-center p-2 xl:p-4 ">
+        <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, amount: 0.2 }} 
+        transition={{ delay:  1, duration: 1, ease: "easeOut"}}
+        className="w-full max-w-md md:max-w-3xl bg-transparent rounded-2xl border-2 border-green-700 flex flex-col justify-around items-center p-2 xl:p-4 ">
+        
+
           {/* Bloque 1 */}
-          <div className='flex items-center gap-5'>
+          <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.2 }} 
+          transition={{ delay:  1, duration: 1, ease: "easeOut"}}
+          className='flex items-center gap-5'>
             <div className="flex flex-col items-center gap-3">
               <div className="w-32 h-24 bg-gradient-to-r from-black via-emerald-950 to-black rounded-xl shadow-lg flex flex-col justify-center items-center gap-2 text-gray-50 text-lg font-poppins">
                 <FaBookOpen className="text-4xl sm:text-4xl" />
@@ -87,7 +105,7 @@ const GlobalBrands: React.FC = () => {
                 Community
               </div>
             </div>
-          </div>
+          </motion.div>
        
 
           {/* Descripción */}
@@ -105,8 +123,8 @@ const GlobalBrands: React.FC = () => {
             >
               Confirm Us
             </Link>
-          </div> 
-        </div>
+          </div>   
+        </motion.div>
       </div>
     </motion.div>
   );

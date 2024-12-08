@@ -55,20 +55,21 @@ const Welcome = () => {
 
         {/* Formulario */}
         <motion.form
-          className="w-full flex gap-3 mt-5 justify-center items-center relative z-10"
+          className="relative z-10 flex sm:flex-row gap-2 justify-center bg-green2 p-3 m-3 rounded-2xl shadow-lg shadow-green1 "
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.7 }}
         >
           <input
-            type="email"
-            placeholder="Correo electrónico"
-            required
-            className="p-3 w-44 xl:w-96 lg:w-96 bg-transparent max-w-md font-poppins rounded-xl text-gray-50 border-2 border-green1 focus:outline-none focus:ring-2 focus:ring-green1 focus:border-green1 placeholder-green1 transition duration-300 ease-in-out"
-          />
+          type="email"
+          placeholder="Correo electrónico"
+          required
+          className="p-2 w-full sm:w-96 font-poppins rounded-xl text-gray-100 bg-transparent border-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent placeholder-yellow-500 transition duration-300 ease-in-out"
+        />
+
           <button
             type="submit"
-            className="contact-btn-form-home px-6 py-3 rounded-xl transition duration-300 ease-in-out transform hover:scale-105 bg-yellow1 text-white font-semibold"
+            className="contact-btn-form-home px-6 py-3 rounded-xl transition duration-300 ease-in-out transform hover:scale-105 bg-yellow1 text-white font-semibold hover:shadow-md hover:shadow-gray-950"
           >
             Suscríbete
           </button>
@@ -81,7 +82,7 @@ const Welcome = () => {
       </motion.div>
 
       <motion.div
-        className="bg-green1 w-[70%] h-72 max-w-3xl rounded-xl  absolute bottom-8 sm:bottom-20 md:bottom-6 lg:bottom-16"
+        className="bg-black w-[70%] h-72 max-w-3xl rounded-xl  absolute bottom-8 sm:bottom-20 md:bottom-6 lg:bottom-16"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 2, delay: 1 }}

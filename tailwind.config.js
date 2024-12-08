@@ -73,7 +73,8 @@ export default {
   			'spin-around': 'spin-around calc(var(--speed) * 2) infinite linear',
   			marquee: 'marquee var(--duration) infinite linear',
   			'marquee-vertical': 'marquee-vertical var(--duration) linear infinite',
-  			'border-beam': 'border-beam calc(var(--duration)*1s) infinite linear'
+  			'border-beam': 'border-beam calc(var(--duration)*1s) infinite linear',
+  			shine: 'shine var(--duration) infinite linear'
   		},
   		keyframes: {
   			'shimmer-slide': {
@@ -114,6 +115,17 @@ export default {
   			'border-beam': {
   				'100%': {
   					'offset-distance': '100%'
+  				}
+  			},
+  			shine: {
+  				'0%': {
+  					'background-position': '0% 0%'
+  				},
+  				'50%': {
+  					'background-position': '100% 100%'
+  				},
+  				to: {
+  					'background-position': '0% 0%'
   				}
   			}
   		}
