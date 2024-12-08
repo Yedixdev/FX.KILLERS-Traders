@@ -6,14 +6,14 @@ import BlurIn from "./ui/blur-in";
 
 const Welcome = () => {
   return (
-    <div className="w-full h-[600px] flex justify-center  relative">
+    <div>
+    <div className="w-full h-[630px] flex justify-center  relative">
       <motion.div
-        className="bg-gray-300 h-[450px] w-[1000px] lg:rounded-xl xl:rounded-xl flex flex-col items-center"
+        className="bg-gray-300 h-[450px] max-w-[1000px] lg:w-[1000px] xl:w-[1000px]  rounded-xl  flex flex-col items-center"
         initial={{ opacity: 0, y: 50 }}  
         animate={{ opacity: 1, y: 0 }}   
         transition={{ duration: 1, ease: "easeOut" }}  
       >
-
         {/* Clasificación */}
          <motion.div
             className="mt-5 font-poppins"
@@ -32,7 +32,7 @@ const Welcome = () => {
 
         {/* Título principal */}
         <motion.div
-          className="title-home-section text-4xl md:text-6xl font-bold font-display text-center relative z-10 p-2"
+          className="title-home-section text-4xl md:text-5xl lg:text-4xl xl:text-5xl font-bold font-display text-center relative z-10 px-5"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
@@ -48,7 +48,7 @@ const Welcome = () => {
           transition={{ duration: 0.8, delay: 0.5 }}
         >
           <TypingAnimation
-          className="font-poppins font-semibold text-lg md:text-xl pt-5 text-center text-green1 relative z-10"
+          className="font-poppins font-semibold text-base md:text-xl xl:text-2xl pt-5 text-center text-green1 relative z-10"
           text="Comunidad exclusiva + Educación Financiera"
           />
         </motion.div>
@@ -64,7 +64,7 @@ const Welcome = () => {
             type="email"
             placeholder="Correo electrónico"
             required
-            className="p-3 w-60 xl:w-96 lg:w-96 bg-transparent max-w-md font-poppins rounded-xl text-gray-50 border-2 border-green1 focus:outline-none focus:ring-2 focus:ring-green1 focus:border-green1 placeholder-green1 transition duration-300 ease-in-out"
+            className="p-3 w-44 xl:w-96 lg:w-96 bg-transparent max-w-md font-poppins rounded-xl text-gray-50 border-2 border-green1 focus:outline-none focus:ring-2 focus:ring-green1 focus:border-green1 placeholder-green1 transition duration-300 ease-in-out"
           />
           <button
             type="submit"
@@ -81,11 +81,13 @@ const Welcome = () => {
       </motion.div>
 
       <motion.div
-        className="bg-green1 w-[80%] h-72 max-w-3xl rounded-xl mt-12 absolute bottom-2"
+        className="bg-green1 w-[70%] h-72 max-w-3xl rounded-xl  absolute bottom-8 sm:bottom-20 md:bottom-6 lg:bottom-16"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 2, delay: 1 }}
       />
+      
+    </div>
     </div>
   );
 };
