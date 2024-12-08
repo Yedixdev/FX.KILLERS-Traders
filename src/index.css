@@ -64,6 +64,14 @@
   animation: gradientEffect 4s ease-in-out infinite,
     shadowEffect 4s ease-in-out infinite;
 }
+.contact-btn-form-home:hover {
+  color: #dddddd;
+  font-weight: 600;
+  background-size: 200% 100%;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3); 
+}
+
 
 .btn-about-us {
   background: linear-gradient(90deg, #000000, #555555, #000000, #000000);
@@ -158,9 +166,61 @@
 }
 
 .shadow-programs {
-    box-shadow: 0 0 150px 120px rgba(50, 154, 107, 0.715); /* Sombra inicial */
-    width: 300px;
-  }
-  
-    
+  box-shadow: 0 0 150px 120px rgba(50, 154, 107, 0.715); /* Sombra inicial */
+  width: 300px;
+}
+.shadow-about-me {
+  box-shadow: 0 0 110px 120px rgba(16, 199, 117, 0.715); /* Sombra inicial */
+}
+.text-color-black {
+  background: linear-gradient(90deg, #ffffff, #434343, #ebebeb, #7a7a7a);
+  background-size: 200% 100%;
+  font-size: 18px;
+  color: transparent; /* Ocultamos el texto por defecto */
+  background-clip: text; /* Aplicamos el degradado al texto */
+  -webkit-background-clip: text; /* Compatibilidad para navegadores basados en WebKit */
+  animation: gradientEffect 4s ease-in-out infinite, shadowEffect 4s ease-in-out infinite;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  transition: transform 2s ease, box-shadow 2s ease, background-color 2s ease, color 2s ease, font-weight 2s ease, background-size 2s ease;
+  font-weight: bold;
+}
 
+
+/*Bordes animacion--------------------------------------------------------*/
+/* Contenedor principal */
+
+/* Animación de borde */
+@keyframes borderBeam {
+  0% {
+    transform: scaleX(0);
+    transform-origin: bottom right;
+  }
+  50% {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  100% {
+    transform: scaleX(0);
+    transform-origin: top right;
+  }
+}
+
+.border-beam {
+  position: relative;
+  padding: 20px;
+  background-color: #fff;
+  border: 2px solid transparent; /* El borde inicial es transparente */
+}
+
+.border-beam::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid transparent; /* Borde inicial invisible */
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(0, 150, 255, 1), rgba(255, 255, 255, 0));
+  z-index: 1;
+  animation: borderBeam 3s infinite;
+}

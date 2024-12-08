@@ -56,58 +56,85 @@ const AboutMe = () => {
     <div className="contact-home-highlight font-poppins font-semibold text-xl mb-4">About Me</div>
       {/* Contenedor superior: Imagen o diseño */}
       <motion.div
-        className="w-full gap-4 flex flex-col items-center justify-evenly lg:flex-row lg:gap-10"
+        className="w-full gap-4 flex flex-col items-center justify-evenly lg:flex-row lg:gap-10  top-1"
         initial={{ y: 50 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.8 }}
       >
        
-        <div className="relative flex justify-center items-center">
-          <div className="shadow-about-me absolute"></div>
-          <div className="relative w-64 h-64 sm:w-80 sm:h-80">
-            <motion.div
-              initial={{ scaleY: 0 }}
-              animate={{ scaleY: 1 }}
-              transition={{ duration: 1 }}
-              className="absolute top-0 bottom-0 left-12 sm:left-16 w-[1px] bg-gradient-to-b from-green-1 via-emerald-50 to-green1"
-            ></motion.div>
-            <motion.div
-              initial={{ scaleY: 0 }}
-              animate={{ scaleY: 1 }}
-              transition={{ duration: 1, delay: 0.2 }}
-              className="absolute top-0 bottom-0 right-12 sm:right-16 w-[1px] bg-gradient-to-b from-green-1 via-emerald-50 to-green1"
-            ></motion.div>
-            <motion.div
-              initial={{ scaleX: 0 }}
-              animate={{ scaleX: 1 }}
-              transition={{ duration: 1, delay: 0.4 }}
-              className="absolute left-0 right-0 top-12 sm:top-16 h-[1px] bg-gradient-to-r from-green-1 via-emerald-50 to-green1"
-            ></motion.div>
-            <motion.div
-              initial={{ scaleX: 0 }}
-              animate={{ scaleX: 1 }}
-              transition={{ duration: 1, delay: 0.6 }}
-              className="absolute left-0 right-0 bottom-12 sm:bottom-16 h-[1px] bg-gradient-to-r from-green-1 via-emerald-50 to-green1"
-            ></motion.div>
-          </div>
-        </div>
+       <div className="relative flex justify-center items-center">
+  <div className="relative w-64 h-64 sm:w-80 sm:h-80 z-20">
+    {/* Línea izquierda */}
+    <motion.div
+      initial={{ opacity: 0, x: -50 }} // Aparece desde la izquierda
+      whileInView={{ opacity: 1, x: 0 }} 
+      viewport={{ once: false, amount: 0.2 }}
+      transition={{ delay: 0.5, duration: 0.5, ease: "easeOut" }}
+      className="absolute top-0 bottom-0 left-12 sm:left-16 w-[2px] bg-gradient-to-b from-green-1 via-emerald-50 to-green1"
+    ></motion.div>
+
+    {/* Línea derecha */}
+    <motion.div
+      initial={{ opacity: 0, x: 50 }} // Aparece desde la derecha
+      whileInView={{ opacity: 1, x: 0 }} 
+      viewport={{ once: false, amount: 0.2 }} 
+      transition={{ delay: 0.5, duration: 0.5, ease: "easeOut" }}
+      className="absolute top-0 bottom-0 right-12 sm:right-16 w-[2px] bg-gradient-to-b from-green-1 via-emerald-50 to-green1"
+    ></motion.div>
+
+    {/* Línea superior */}
+    <motion.div
+      initial={{ opacity: 0, y: -50 }} // Aparece desde arriba
+      whileInView={{ opacity: 1, y: 0 }} 
+      viewport={{ once: false, amount: 0.2 }} 
+      transition={{ delay: 0.5, duration: 0.5, ease: "easeOut" }}
+      className="absolute left-0 right-0 top-12 sm:top-16 h-[2px] bg-gradient-to-r from-green-1 via-emerald-50 to-green1"
+    ></motion.div>
+
+    {/* Línea inferior */}
+    <motion.div
+      initial={{ opacity: 0, y: 50 }} // Aparece desde abajo
+      whileInView={{ opacity: 1, y: 0 }} 
+      viewport={{ once: false, amount: 0.2 }} 
+      transition={{ delay: 0.5, duration: 0.5, ease: "easeOut" }}
+      className="absolute left-0 right-0 bottom-12 sm:bottom-16 h-[2px] bg-gradient-to-r from-green-1 via-emerald-50 to-green1"
+    ></motion.div>
+  </div>
+
+  {/* Aquí va la sombra o contenido adicional */}
+  <div className="shadow-about-me absolute top-40"></div>
+</div>
+
+
 
         {/* Información personal */}
         <motion.div
           className="w-full lg:w-[800px] bg-green2 opacity-90 relative z-10 rounded-xl p-6 sm:p-10 shadow-lg shadow-green-900"
-          initial={{ x: -50 }}
+          initial={{ opacity: 0, scale: 0.3  }}
           animate={{ x: 0 }}
-          transition={{ duration: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.2 }} 
+          transition={{ duration: 1.2, ease: "easeOut" }} 
         >
-          <div className="flex flex-col text-center gap-2">
+          <motion.div 
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.2 }} 
+          transition={{ delay:  1, duration: 0.5, ease: "easeOut"}}
+          className="flex flex-col text-center gap-2">
             <span className="font-display text-3xl sm:text-4xl font-bold text-gray-50">
               CEO e Instructor
             </span>
             <span className="contact-home-highlight font-bold text-gray-100 font-display text-2xl sm:text-3xl">
               Ivan Vargas
             </span>
-          </div>
-          <div className="text-gray-50 font-poppins font-light mt-4 text-sm sm:text-base">
+          </motion.div>
+          <motion.div 
+           initial={{ opacity: 0, y: -20 }}
+           whileInView={{ opacity: 1, y: 0 }}
+           viewport={{ once: false, amount: 0.2 }} 
+           transition={{ delay:  1.5, duration: 2, ease: "easeOut"}}
+           className="text-gray-50 font-poppins font-light mt-4 text-sm sm:text-base">
             <p>
               Me chamo Washington Henrique Fernandes de Sousa, mas pode me
               chamar apenas de Henrique. Prazer!
@@ -120,18 +147,23 @@ const AboutMe = () => {
               VueJS e UX/UI Design. Tentando ser um pouquinho melhor do que
               ontem todos os dias.
             </p>
-          </div>
+          </motion.div>
         </motion.div>
       </motion.div>
 
-      {/* Título */}
-      <motion.div
-        className="text-3xl sm:text-5xl font-bold font-display text-gray-300 text-center relative z-10 mt-10"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-      >
-        <span className="contact-home-highlight">Mantente</span> en contacto
+      <motion.div 
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: false, amount: 0.2 }} 
+      transition={{ delay:  0.5, duration: 0.8, ease: "easeOut"}}
+      className="flex flex-col justify-center items-center mt-5 gap-4">
+        <div className="relative z-10 font-poppins text-xl font-semibold contact-home-highlight ">Newsletter</div>
+        <div
+          className="text-3xl sm:text-5xl font-bold font-display text-gray-300 text-center relative z-10 "
+        >
+          <span className="contact-home-highlight">Mantente</span> en contacto
+        </div>
+        <div className="font-poppins text-gray-300 text-center">Suscribete a nuestro email para recibir las últimas actualizaciones y ofertas exclusivas.</div>
       </motion.div>
 
       {/* Mensajes */}
@@ -146,39 +178,50 @@ const AboutMe = () => {
       )}
 
       {/* Formulario */}
-      <motion.form
-        onSubmit={handleSubmit}
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.8 }}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false, amount: 0.3 }}
-        className="w-full flex  sm:flex-row gap-2 mt-5 justify-center"
+        viewport={{ once: false, amount: 0.2 }} 
+        transition={{ delay:  1, duration: 1, ease: "easeOut"}}
+        className="relative mt-5 flex justify-center"
       >
-        <input
-          type="email"
-          placeholder="Correo electrónico"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-          className="p-3 w-full sm:w-96 font-poppins rounded-xl text-gray-100 bg-green2 border-2 border-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent placeholder-yellow-500 transition duration-300 ease-in-out shadow-md shadow-zinc-950"
-        />
-
-        <motion.button
-          type="submit"
-          className={`contact-btn-form-home px-8 rounded-xl transition duration-300 ease-in-out transform hover:scale-105 ${
-            isSubmitting ? "opacity-50 cursor-not-allowed" : ""
-          }`}
-          disabled={isSubmitting}
-          initial={{ scale: 0.9 }}
-          animate={{ scale: 1 }}
+        
+        {/* Formulario */}
+        <motion.form
+          onSubmit={handleSubmit}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.3 }}
-          transition={{ duration: 0.3 }}
+          className="relative z-10 flex sm:flex-row gap-2 justify-center bg-green2 p-3 rounded-2xl shadow-lg shadow-green1"
         >
-          {isSubmitting ? "Enviando..." : "Suscribirme"}
-        </motion.button>
-      </motion.form>
+          <input
+            type="email"
+            placeholder="Correo electrónico"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            className="p-3 w-full sm:w-96 font-poppins rounded-xl text-gray-100 bg-transparent border-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent placeholder-yellow-500 transition duration-300 ease-in-out"
+          />
+
+          <motion.button
+            type="submit"
+            className={`contact-btn-form-home px-8 rounded-xl transition duration-300 ease-in-out transform hover:scale-105 ${
+              isSubmitting ? "opacity-50 cursor-not-allowed" : ""
+            }`}
+            disabled={isSubmitting}
+            initial={{ scale: 0.9 }}
+            animate={{ scale: 1 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.3 }}
+          >
+            {isSubmitting ? "Enviando..." : "Suscribirme"}
+          </motion.button>
+        </motion.form>
+      </motion.div>
+
     </motion.div>
   );
 };
