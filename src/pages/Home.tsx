@@ -2,6 +2,7 @@ import Welcome from "../components/Home-Welcome"
 import AboutMe from "../components/Home-AboutMe"
 import GlobalBrands from "@/components/Home-GlobalBrands"
 import Testimonials from "@/components/Home-Testimonial"
+import HomeFeatures from "@/components/Home-Features"
 
 const Home = () => {
    return(
@@ -9,6 +10,7 @@ const Home = () => {
          <Welcome/>
          <GlobalBrands/>
          <Testimonials/>
+         <HomeFeatures/>
          <AboutMe/>
       </div>
    )
