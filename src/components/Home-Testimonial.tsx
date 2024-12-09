@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import HomeAvatar from './Home-TestimonialAvatar';
+import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
 
 const testimonials = [
   { 
@@ -165,36 +166,51 @@ const CustomPagination: React.FC<CustomPaginationProps> = ({ totalItems, itemsPe
   };
 
   return (
-    <div className="flex justify-center items-center mt-6">
-      {/* Botón de anterior */}
-      <button
-        className="px-3 py-1 mx-1 bg-gray-200 rounded-full hover:bg-gray-300"
-        disabled={currentPage === 1}
-        onClick={() => handlePageChange(currentPage - 1)}
-      >
-        Anterior
-      </button>
+    <div className="flex justify-center items-center  bg-gray-400 py-3 px-8 rounded-xl shadow-lg shadow-gray-600">
+  {/* Botón de anterior */}
+  <button
+    disabled={currentPage === 1}
+    onClick={() => handlePageChange(currentPage - 1)}
+    className={`flex items-center justify-center w-10 h-10 rounded-full ${
+      currentPage === 1
+        ? 'bg-gray-600 text-gray-400 cursor-not-allowed'
+        : 'bg-yellow-600 hover:bg-yellow-500 text-white'
+    } transition duration-300 ease-in-out`}
+  >
+    <FaArrowAltCircleLeft className="text-xl" />
+  </button>
 
-      {/* Números de páginas */}
-      {Array.from({ length: totalPages }, (_, index) => (
-        <button
-          key={index + 1}
-          className={`px-3 py-1 mx-1 text-lg ${currentPage === index + 1 ? 'bg-green1 text-white' : 'bg-gray-200 text-gray-900'} rounded-full hover:bg-blue-500 hover:text-white`}
-          onClick={() => handlePageChange(index + 1)}
-        >
-          {index + 1}
-        </button>
-      ))}
-
-      {/* Botón de siguiente */}
+  {/* Números de páginas */}
+  <div className="flex mx-4 space-x-2">
+    {Array.from({ length: totalPages }, (_, index) => (
       <button
-        className="px-3 py-1 mx-1 bg-gray-200 rounded-full hover:bg-gray-300"
-        disabled={currentPage === totalPages}
-        onClick={() => handlePageChange(currentPage + 1)}
+        key={index + 1}
+        className={`w-10 h-10 rounded-full text-lg font-bold ${
+          currentPage === index + 1
+            ? 'bg-green1 text-white shadow-md shadow-gray-00'
+            : 'bg-gray-300 text-gray-800 hover:bg-green2 hover:text-white'
+        } transition transform duration-300 hover:scale-105 ease-in-out`}
+        onClick={() => handlePageChange(index + 1)}
       >
-        Siguiente
+        {index + 1}
       </button>
-    </div>
+    ))}
+  </div>
+
+  {/* Botón de siguiente */}
+  <button
+    disabled={currentPage === totalPages}
+    onClick={() => handlePageChange(currentPage + 1)}
+    className={`flex items-center justify-center w-10 h-10 rounded-full ${
+      currentPage === totalPages
+        ? 'bg-gray-600 text-gray-400 cursor-not-allowed'
+        : 'bg-yellow-600 hover:bg-yellow-500 text-white'
+    } transition duration-300 ease-in-out`}
+  >
+    <FaArrowAltCircleRight className="text-xl" />
+  </button>
+</div>
+
   );
 };
 
