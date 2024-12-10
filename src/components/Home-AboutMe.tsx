@@ -54,7 +54,6 @@ const AboutMe = () => {
       transition={{ duration: 0.5 }}
     > 
     <div className="contact-home-highlight font-poppins font-semibold text-xl mb-4">About Me</div>
-      {/* Contenedor superior: Imagen o diseño */}
       <motion.div
         className="w-full gap-4 flex flex-col items-center justify-evenly lg:flex-row lg:gap-10  top-1"
         initial={{ y: 50 }}
@@ -62,93 +61,88 @@ const AboutMe = () => {
         transition={{ duration: 0.8 }}
       >
        
-       <div className="relative flex justify-center items-center">
-  <div className="relative w-64 h-64 sm:w-80 sm:h-80 z-20">
-    {/* Línea izquierda */}
-    <motion.div
-      initial={{ opacity: 0, x: -50 }} // Aparece desde la izquierda
-      whileInView={{ opacity: 1, x: 0 }} 
-      viewport={{ once: false, amount: 0.2 }}
-      transition={{ delay: 0.5, duration: 0.5, ease: "easeOut" }}
-      className="absolute top-0 bottom-0 left-12 sm:left-16 w-[2px] bg-gradient-to-b from-green-1 via-emerald-50 to-green1"
-    ></motion.div>
+      <div className="relative flex justify-center items-center">
+        <div className="relative w-64 h-64 sm:w-80 sm:h-80 z-20">
+          {/* Línea izquierda */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }} // Aparece desde la izquierda
+            whileInView={{ opacity: 1, x: 0 }} 
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ delay: 0.5, duration: 0.5, ease: "easeOut" }}
+            className="absolute top-0 bottom-0 left-12 sm:left-16 w-[2px] bg-gradient-to-b from-green-1 via-emerald-50 to-green1"
+          ></motion.div>
 
-    {/* Línea derecha */}
-    <motion.div
-      initial={{ opacity: 0, x: 50 }} // Aparece desde la derecha
-      whileInView={{ opacity: 1, x: 0 }} 
-      viewport={{ once: false, amount: 0.2 }} 
-      transition={{ delay: 0.5, duration: 0.5, ease: "easeOut" }}
-      className="absolute top-0 bottom-0 right-12 sm:right-16 w-[2px] bg-gradient-to-b from-green-1 via-emerald-50 to-green1"
-    ></motion.div>
+          {/* Línea derecha */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }} // Aparece desde la derecha
+            whileInView={{ opacity: 1, x: 0 }} 
+            viewport={{ once: false, amount: 0.2 }} 
+            transition={{ delay: 0.5, duration: 0.5, ease: "easeOut" }}
+            className="absolute top-0 bottom-0 right-12 sm:right-16 w-[2px] bg-gradient-to-b from-green-1 via-emerald-50 to-green1"
+          ></motion.div>
 
-    {/* Línea superior */}
-    <motion.div
-      initial={{ opacity: 0, y: -50 }} // Aparece desde arriba
-      whileInView={{ opacity: 1, y: 0 }} 
-      viewport={{ once: false, amount: 0.2 }} 
-      transition={{ delay: 0.5, duration: 0.5, ease: "easeOut" }}
-      className="absolute left-0 right-0 top-12 sm:top-16 h-[2px] bg-gradient-to-r from-green-1 via-emerald-50 to-green1"
-    ></motion.div>
+          {/* Línea superior */}
+          <motion.div
+            initial={{ opacity: 0, y: -50 }} // Aparece desde arriba
+            whileInView={{ opacity: 1, y: 0 }} 
+            viewport={{ once: false, amount: 0.2 }} 
+            transition={{ delay: 0.5, duration: 0.5, ease: "easeOut" }}
+            className="absolute left-0 right-0 top-12 sm:top-16 h-[2px] bg-gradient-to-r from-green-1 via-emerald-50 to-green1"
+          ></motion.div>
 
-    {/* Línea inferior */}
-    <motion.div
-      initial={{ opacity: 0, y: 50 }} // Aparece desde abajo
-      whileInView={{ opacity: 1, y: 0 }} 
-      viewport={{ once: false, amount: 0.2 }} 
-      transition={{ delay: 0.5, duration: 0.5, ease: "easeOut" }}
-      className="absolute left-0 right-0 bottom-12 sm:bottom-16 h-[2px] bg-gradient-to-r from-green-1 via-emerald-50 to-green1"
-    ></motion.div>
-  </div>
+          {/* Línea inferior */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }} // Aparece desde abajo
+            whileInView={{ opacity: 1, y: 0 }} 
+            viewport={{ once: false, amount: 0.2 }} 
+            transition={{ delay: 0.5, duration: 0.5, ease: "easeOut" }}
+            className="absolute left-0 right-0 bottom-12 sm:bottom-16 h-[2px] bg-gradient-to-r from-green-1 via-emerald-50 to-green1"
+          ></motion.div>
+        </div>
 
-  {/* Aquí va la sombra o contenido adicional */}
-  <div className="shadow-about-me absolute top-40"></div>
-</div>
-
-
-
-        {/* Información personal */}
-        <motion.div
-          className="w-full lg:w-[800px] bg-green2 opacity-90 relative z-10 rounded-xl p-6 sm:p-10 shadow-lg shadow-green-900"
-          initial={{ opacity: 0, scale: 0.3  }}
-          animate={{ x: 0 }}
-          whileInView={{ opacity: 1, scale: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.2 }} 
-          transition={{ duration: 1.2, ease: "easeOut" }} 
-        >
-          <motion.div 
+        <div className="shadow-about-me absolute top-40"></div>
+      </div>
+      <motion.div
+        className="w-full lg:w-[800px] bg-green2 opacity-90 relative z-10 rounded-xl p-6 sm:p-10 shadow-lg shadow-green-900"
+        initial={{ opacity: 0, scale: 0.3  }}
+        animate={{ x: 0 }}
+        whileInView={{ opacity: 1, scale: 1, y: 0 }}
+        viewport={{ once: false, amount: 0.2 }} 
+        transition={{ duration: 1.2, ease: "easeOut" }} 
+      >
+        <motion.div 
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, amount: 0.2 }} 
+        transition={{ delay:  1, duration: 0.5, ease: "easeOut"}}
+        className="flex flex-col text-center gap-2">
+          <span className="font-display text-3xl sm:text-4xl font-bold text-gray-50">
+            CEO e Instructor
+          </span>
+          <span className="contact-home-highlight font-bold text-gray-100 font-display text-2xl sm:text-3xl">
+            Ivan Vargas
+          </span>
+        </motion.div>
+        <motion.div 
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.2 }} 
-          transition={{ delay:  1, duration: 0.5, ease: "easeOut"}}
-          className="flex flex-col text-center gap-2">
-            <span className="font-display text-3xl sm:text-4xl font-bold text-gray-50">
-              CEO e Instructor
-            </span>
-            <span className="contact-home-highlight font-bold text-gray-100 font-display text-2xl sm:text-3xl">
-              Ivan Vargas
-            </span>
-          </motion.div>
-          <motion.div 
-           initial={{ opacity: 0, y: -20 }}
-           whileInView={{ opacity: 1, y: 0 }}
-           viewport={{ once: false, amount: 0.2 }} 
-           transition={{ delay:  1.5, duration: 2, ease: "easeOut"}}
-           className="text-gray-50 font-poppins font-light mt-4 text-sm sm:text-base">
-            <p>
-              Me chamo Washington Henrique Fernandes de Sousa, mas pode me
-              chamar apenas de Henrique. Prazer!
-            </p>
-            <p className="mt-2">
-              Há mais de 2 anos desenvolvendo e programando interfaces com
-              JavaScript, React JS e Typescript. Graduado em Análise e
-              Desenvolvimento de Sistemas pela Fatec de São José dos Campos.
-              Interesses em desenvolvimento Front-end com React, React Native,
-              VueJS e UX/UI Design. Tentando ser um pouquinho melhor do que
-              ontem todos os dias.
-            </p>
-          </motion.div>
+          transition={{ delay:  1.5, duration: 2, ease: "easeOut"}}
+          className="text-gray-50 font-poppins font-light mt-4 text-sm sm:text-base">
+          <p>
+            Me chamo Washington Henrique Fernandes de Sousa, mas pode me
+            chamar apenas de Henrique. Prazer!
+          </p>
+          <p className="mt-2">
+            Há mais de 2 anos desenvolvendo e programando interfaces com
+            JavaScript, React JS e Typescript. Graduado em Análise e
+            Desenvolvimento de Sistemas pela Fatec de São José dos Campos.
+            Interesses em desenvolvimento Front-end com React, React Native,
+            VueJS e UX/UI Design. Tentando ser um pouquinho melhor do que
+            ontem todos os dias.
+          </p>
         </motion.div>
+      </motion.div>
       </motion.div>
 
       <motion.div 
@@ -157,7 +151,8 @@ const AboutMe = () => {
       viewport={{ once: false, amount: 0.2 }} 
       transition={{ delay:  0.5, duration: 0.8, ease: "easeOut"}}
       className="flex flex-col justify-center items-center mt-5 gap-4">
-        <div className="relative z-10 font-poppins text-xl font-semibold contact-home-highlight ">Newsletter</div>
+        <div 
+        className="relative z-10 font-poppins text-xl font-semibold contact-home-highlight ">Newsletter</div>
         <div
           className="text-3xl sm:text-5xl font-bold font-display text-gray-300 text-center relative z-10 "
         >
@@ -166,7 +161,6 @@ const AboutMe = () => {
         <div className="font-poppins text-gray-300 text-center">Suscribete a nuestro email para recibir las últimas actualizaciones y ofertas exclusivas.</div>
       </motion.div>
 
-      {/* Mensajes */}
       {message && (
         <div
           className={`${
@@ -177,7 +171,6 @@ const AboutMe = () => {
         </div>
       )}
 
-      {/* Formulario */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -186,7 +179,6 @@ const AboutMe = () => {
         className="relative mt-5 flex justify-center"
       >
         
-        {/* Formulario */}
         <motion.form
           onSubmit={handleSubmit}
           initial={{ opacity: 0, y: 30 }}
