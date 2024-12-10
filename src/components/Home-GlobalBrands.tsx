@@ -71,7 +71,7 @@ const GlobalBrands: React.FC = () => {
 
       <div className="flex flex-col justify-center items-center px-4 ">
         <h3 className="text-2xl sm:text-3xl lg:text-4xl xl:text-[40px]  font-bold text-gray-100 flex gap-3 pb-5 font-display">
-          <span className="contact-home-highlight font-display">Programas</span> Destacados
+          <span className="contact-home-highlight font-display pb-5">Programas</span> Destacados
         </h3>
 
         <motion.div
