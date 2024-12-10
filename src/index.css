@@ -94,16 +94,7 @@
 
 
 /* Estilos para los titulos verdes  --------------------------------------------- */
-.title-home-section {
-  background: linear-gradient(90deg, #197149, #012b20); /* Gradiente */
-  background-size: 200% 100%; /* Preparación para animación de gradiente */
-  -webkit-background-clip: text;
-  color: transparent; /* El texto se ve solo a través del gradiente */
-  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5); /* Sombra inicial */
-  display: inline-block;
-  animation: gradientMove 5s ease-in-out infinite,
-    shadowPulse 5s ease-in-out infinite; /* Animaciones combinadas */
-}
+/* */
 
 /* Animación del gradiente */
 .title-home-section {
@@ -118,7 +109,6 @@
   -webkit-background-clip: text;
   color: transparent; /* El texto es visible solo a través del gradiente */
   text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7); /* Sombra inicial más marcada */
-  display: inline-block;
   animation: gradientMove 5s ease-in-out infinite,
     shadowPulse 8s ease-in-out infinite; /* Animaciones combinadas */
 }

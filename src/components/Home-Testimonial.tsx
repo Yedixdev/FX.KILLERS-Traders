@@ -1,257 +1,58 @@
-import React, { useState } from 'react';
-import HomeAvatar from './Home-TestimonialAvatar';
-import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
-
-const testimonials = [
-  { 
-    name: 'Romário Lima', 
-    rating: 5, 
-    color: 'green', 
-    height: 'row-span-1', 
-    date: '2024-12-01', 
-    text: '¡Un servicio excepcional! Recomendaría esta empresa a todos mis amigos.' 
-  },
-  { 
-    name: 'Romário Lima', 
-    rating: 4, 
-    color: 'yellow', 
-    height: 'row-span-2', 
-    date: '2024-11-15', 
-    text: 'El producto llegó bien, aunque hubo pequeños retrasos en la entrega.' 
-  },
-  { 
-    name: 'Romário Lima', 
-    rating: 3, 
-    color: 'gray', 
-    height: 'row-span-1', 
-    date: '2024-10-20', 
-    text: 'La experiencia fue buena, pero hay espacio para mejorar en algunos aspectos.' 
-  },
-  { 
-    name: 'Romário Lima', 
-    rating: 5, 
-    color: 'yellow', 
-    height: 'row-span-2', 
-    date: '2024-09-05', 
-    text: 'El equipo fue increíble, superaron todas mis expectativas.' 
-  },
-  { 
-    name: 'Romário Lima', 
-    rating: 4, 
-    color: 'green', 
-    height: 'row-span-1', 
-    date: '2024-08-12', 
-    text: 'Me gustó bastante, pero aún pueden trabajar en la velocidad de atención.' 
-  },
-  { 
-    name: 'Romário Lima', 
-    rating: 3, 
-    color: 'gray', 
-    height: 'row-span-1', 
-    date: '2024-07-18', 
-    text: 'El producto cumplió con lo prometido, aunque el empaque podría ser mejor.' 
-  },
-  { 
-    name: 'Romário Lima', 
-    rating: 4, 
-    color: 'yellow', 
-    height: 'row-span-2', 
-    date: '2024-06-25', 
-    text: 'Excelente calidad, pero el proceso de compra fue algo confuso.' 
-  },
-  { 
-    name: 'Romário Lima', 
-    rating: 3, 
-    color: 'gray', 
-    height: 'row-span-1', 
-    date: '2024-05-10', 
-    text: 'La atención fue buena, pero el producto llegó tarde.' 
-  },
-  { 
-    name: 'Romário Lima', 
-    rating: 4, 
-    color: 'green', 
-    height: 'row-span-1', 
-    date: '2024-04-22', 
-    text: 'Todo bien, aunque espero que mejoren en el seguimiento de pedidos.' 
-  },
-  { 
-    name: 'Romário Lima', 
-    rating: 5, 
-    color: 'green', 
-    height: 'row-span-1', 
-    date: '2024-12-01', 
-    text: '¡Un servicio excepcional! Recomendaría esta empresa a todos mis amigos.' 
-  },
-  { 
-    name: 'Romário Lima', 
-    rating: 4, 
-    color: 'yellow', 
-    height: 'row-span-2', 
-    date: '2024-11-15', 
-    text: 'El producto llegó bien, aunque hubo pequeños retrasos en la entrega.' 
-  },
-  { 
-    name: 'Romário Lima', 
-    rating: 3, 
-    color: 'gray', 
-    height: 'row-span-1', 
-    date: '2024-10-20', 
-    text: 'La experiencia fue buena, pero hay espacio para mejorar en algunos aspectos.' 
-  },
-  { 
-    name: 'Romário Lima', 
-    rating: 5, 
-    color: 'yellow', 
-    height: 'row-span-2', 
-    date: '2024-09-05', 
-    text: 'El equipo fue increíble, superaron todas mis expectativas.' 
-  },
-  { 
-    name: 'Romário Lima', 
-    rating: 4, 
-    color: 'green', 
-    height: 'row-span-1', 
-    date: '2024-08-12', 
-    text: 'Me gustó bastante, pero aún pueden trabajar en la velocidad de atención.' 
-  },
-  { 
-    name: 'Romário Lima', 
-    rating: 3, 
-    color: 'gray', 
-    height: 'row-span-1', 
-    date: '2024-07-18', 
-    text: 'El producto cumplió con lo prometido, aunque el empaque podría ser mejor.' 
-  },
-  { 
-    name: 'Romário Lima', 
-    rating: 4, 
-    color: 'yellow', 
-    height: 'row-span-2', 
-    date: '2024-06-25', 
-    text: 'Excelente calidad, pero el proceso de compra fue algo confuso.' 
-  },
-  { 
-    name: 'Romário Lima', 
-    rating: 3, 
-    color: 'gray', 
-    height: 'row-span-1', 
-    date: '2024-05-10', 
-    text: 'La atención fue buena, pero el producto llegó tarde.' 
-  },
-  { 
-    name: 'Romário Lima', 
-    rating: 4, 
-    color: 'green', 
-    height: 'row-span-1', 
-    date: '2024-04-22', 
-    text: 'Todo biencool, aunque espero que mejoren en el seguimiento de pedidos.' 
-  },
-];
-
-interface CustomPaginationProps {
-  totalItems: number;
-  itemsPerPage: number;
-  currentPage: number;
-  onPageChange: (page: number) => void;
-}
-
-const CustomPagination: React.FC<CustomPaginationProps> = ({ totalItems, itemsPerPage, currentPage, onPageChange }) => {
-  const totalPages = Math.ceil(totalItems / itemsPerPage);
-
-  const handlePageChange = (newPage: number) => {
-    if (newPage >= 1 && newPage <= totalPages) {
-      onPageChange(newPage);
-    }
-  };
-
-  return (
-    <div className="flex justify-center items-center  bg-gray-400 py-3 px-8 rounded-xl shadow-lg shadow-gray-600">
-  {/* Botón de anterior */}
-  <button
-    disabled={currentPage === 1}
-    onClick={() => handlePageChange(currentPage - 1)}
-    className={`flex items-center justify-center w-10 h-10 rounded-full ${
-      currentPage === 1
-        ? 'bg-gray-600 text-gray-400 cursor-not-allowed'
-        : 'bg-yellow-600 hover:bg-yellow-500 text-white'
-    } transition duration-300 ease-in-out`}
-  >
-    <FaArrowAltCircleLeft className="text-xl" />
-  </button>
-
-  {/* Números de páginas */}
-  <div className="flex mx-4 space-x-2">
-    {Array.from({ length: totalPages }, (_, index) => (
-      <button
-        key={index + 1}
-        className={`w-10 h-10 rounded-full text-lg font-bold ${
-          currentPage === index + 1
-            ? 'bg-green1 text-white shadow-md shadow-gray-00'
-            : 'bg-gray-300 text-gray-800 hover:bg-green2 hover:text-white'
-        } transition transform duration-300 hover:scale-105 ease-in-out`}
-        onClick={() => handlePageChange(index + 1)}
-      >
-        {index + 1}
-      </button>
-    ))}
-  </div>
-
-  {/* Botón de siguiente */}
-  <button
-    disabled={currentPage === totalPages}
-    onClick={() => handlePageChange(currentPage + 1)}
-    className={`flex items-center justify-center w-10 h-10 rounded-full ${
-      currentPage === totalPages
-        ? 'bg-gray-600 text-gray-400 cursor-not-allowed'
-        : 'bg-yellow-600 hover:bg-yellow-500 text-white'
-    } transition duration-300 ease-in-out`}
-  >
-    <FaArrowAltCircleRight className="text-xl" />
-  </button>
-</div>
-
-  );
-};
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import DataTestimonials from "@/data/DataTestimonials";
+import TestimonialsPagination from "./Home-TestimonialPagination";
+import HomeAvatar from "./Home-TestimonialAvatar";
 
 const Testimonials: React.FC = () => {
   const itemsPerPage = 9;
   const [currentPage, setCurrentPage] = useState(1);
-  
-  const totalItems = testimonials.length;
 
-  // Calcular el índice de los testimonios a mostrar para la página actual
+  const totalItems = DataTestimonials.length;
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
-  const currentTestimonials = testimonials.slice(startIndex, endIndex);
+  const currentTestimonials = DataTestimonials.slice(startIndex, endIndex);
 
-  // Función para manejar el cambio de página
   const handlePageChange = (newPage: number) => {
     setCurrentPage(newPage);
   };
 
   return (
-    <div className="p-6 flex flex-col justify-center items-center bg-gray-300 lg:rounded-2xl my-10 h-auto w-full xl:w-[1250px] py-5 px-4 relative z-10 xl:rounded-2xl overflow-hidden">
-      <span className='font-poppins font-semibold text-xl title-home-section '>Testimonials</span>
-      
-      <div className="text-4xl font-bold text-center mb-6 text-gray-700 font-display title-home-section ">
-        <span className='text-gray-200 '>Testimonios de </span> <span className='text-gray-200 title-home-section'>Nuestros Usuarios</span>
+    <motion.div
+      initial={{ opacity: 0, y: -50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.8 }}
+      className="p-6 flex flex-col justify-center items-center bg-gray-300 lg:rounded-2xl my-10 h-auto w-full xl:w-[1250px] py-5 px-4 relative z-10 xl:rounded-2xl"
+    >
+      <span className="font-poppins font-semibold text-xl title-home-section">Testimonials</span>
+
+      <div className="text-4xl font-bold text-center mb-6 text-gray-700 font-display title-home-section">
+        <span className="text-gray-200">Testimonios de </span>
+        <span className="text-gray-200 title-home-section">Nuestros Usuarios</span>
       </div>
+
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 auto-rows-fr">
         {currentTestimonials.map((testimonial, index) => {
           const bgColor = {
-            green: 'bg-green1 text-white',
-            yellow: 'bg-yellow-500 text-black',
-            gray: 'bg-gray-400 text-black',
+            green: "bg-green1 text-white",
+            yellow: "bg-yellow-500 text-black",
+            gray: "bg-gray-400 text-black",
           }[testimonial.color];
 
           return (
-            <div
+            <motion.div
               key={index}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.5 }}
+              transition={{
+                duration: 0.6,
+                delay: index * 0.1,
+              }}
               className={`rounded-xl p-6 shadow-lg ${bgColor} ${testimonial.height}`}
-              style={{ minWidth: '200px', maxWidth: '300px' }}
+              style={{ minWidth: "200px", maxWidth: "300px" }}
             >
-              {/* Encabezado */}
               <div className="flex items-center gap-3 mb-3">
                 <img
                   src="https://via.placeholder.com/50"
@@ -263,31 +64,28 @@ const Testimonials: React.FC = () => {
                   <p className="text-sm text-gray-200">{testimonial.date}</p>
                 </div>
               </div>
-
-              {/* Reseña */}
               <div className="mb-3 text-sm">
                 <span className="text-lg">{'★'.repeat(testimonial.rating)}</span>
                 <span className="text-gray-400">{'☆'.repeat(5 - testimonial.rating)}</span>
               </div>
-
-              {/* Texto */}
               <p className="text-sm leading-relaxed">{testimonial.text}</p>
-            </div>
+            </motion.div>
           );
         })}
       </div>
-      {/* Paginación */}
+
       <div className="mt-6">
-        <CustomPagination
+        <TestimonialsPagination
           totalItems={totalItems}
           itemsPerPage={itemsPerPage}
           currentPage={currentPage}
           onPageChange={handlePageChange}
         />
       </div>
-      <HomeAvatar/>
-    </div>
+      <HomeAvatar />
+    </motion.div>
   );
 };
 
 export default Testimonials;
+
