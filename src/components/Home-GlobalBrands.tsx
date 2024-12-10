@@ -34,9 +34,9 @@ const GlobalBrands: React.FC = () => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: false, amount: 0.3 }}
       transition={{ duration: 0.5 }}
-      className="bg-gradient-green h-auto w-full xl:w-[1250px] py-5 px-4 flex flex-col items-center relative z-10 xl:rounded-2xl overflow-hidden"
+      className="bg-gradient-green h-auto w-full py-5 S flex flex-col items-center relative z-10 overflow-hidden"
     >
-      <div className='font-poppins contact-home-highlight font-semibold lg:text-lg'>We Transport Confidence</div>
+      <div className='font-poppins contact-home-highlight font-bold lg:text-xl'>We Transport Confidence</div>
       {/* Título */}
       <div className="text-center ">
         <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-[42px] font-bold text-gray-200 font-display">
@@ -69,7 +69,7 @@ const GlobalBrands: React.FC = () => {
         </Marquee>
       </motion.div>
 
-      <div className="flex flex-col justify-center items-center ">
+      <div className="flex flex-col justify-center items-center px-4 ">
         <h3 className="text-2xl sm:text-3xl lg:text-4xl xl:text-[40px]  font-bold text-gray-100 flex gap-3 pb-5 font-display">
           <span className="contact-home-highlight font-display">Programas</span> Destacados
         </h3>

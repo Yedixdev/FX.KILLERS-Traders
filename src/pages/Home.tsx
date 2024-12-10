@@ -1,8 +1,8 @@
-import Welcome from "../components/Home-Welcome"
-import AboutMe from "../components/Home-AboutMe"
+import Welcome from "@/components/Home-Welcome"
+import AboutMe from "@/components/Home-AboutMe"
 import GlobalBrands from "@/components/Home-GlobalBrands"
 import Testimonials from "@/components/Home-Testimonial"
-import HomeFeatures from "@/components/Home-Features"
+import HomeWhyChosee from "@/components/Home-WhyChosee"
 
 const Home = () => {
    return(
@@ -10,10 +10,10 @@ const Home = () => {
          <Welcome/>
          <GlobalBrands/>
          <Testimonials/>
-         <HomeFeatures/>
+         <HomeWhyChosee/>
          <AboutMe/>
       </div>
    )
 }
 
-export default Home
+export default Home;
