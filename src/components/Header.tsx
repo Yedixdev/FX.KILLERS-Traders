@@ -21,11 +21,11 @@ const Header = () => {
     { name: 'FAQs', path: '/FAQs' },
   ];
 
-//   const navIcons = [
-//     { icon: <FaYoutube/>, href: 'https://www.youtube.com/@babyivanfx' },
-//     { icon: <FaInstagram/>, href: 'https://www.instagram.com/babyivanfx/' },
-//     { icon: <FaDiscord/>, href: '' }
-//   ];
+  // const navIcons = [
+  //   { icon: <FaYoutube/>, href: 'https://www.youtube.com/@babyivanfx' },
+  //   { icon: <FaInstagram/>, href: 'https://www.instagram.com/babyivanfx/' },
+  //   { icon: <FaDiscord/>, href: '' }
+  // ];
 
   return (
     <motion.header
@@ -81,20 +81,22 @@ const Header = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.8 }}
           >
-            {/* {navIcons.map((item, index) => (
-              <motion.a
-                key={item.href}
-                href={item.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-yellow-600 hover:text-yellow-100 text-2xl transition duration-300 transform hover:scale-150 "
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 1.2 + 0.2 * index }}
-              >
-                {item.icon}
-              </motion.a>
-            ))} */}
+            {/* <div className=''>
+              {navIcons.map((item, index) => (
+                <motion.a
+                  key={item.href}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-yellow-600 hover:text-yellow-100 text-2xl transition duration-300 transform hover:scale-150 "
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: 1.2 + 0.2 * index }}
+                >
+                  {item.icon}
+                </motion.a>
+              ))}
+            </div> */}
 
           <motion.div
           initial={{ opacity: 0, x: 20 }}

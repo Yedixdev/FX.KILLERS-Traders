@@ -1,8 +1,7 @@
 import { motion } from "framer-motion"
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Pagination } from "swiper/modules";
-
-// Import Swiper styles
+//ignore error
 import "swiper/css";
 
 const HomeWhyChosee = () => {
@@ -51,7 +50,9 @@ const HomeWhyChosee = () => {
     viewport={{ once: false, amount: 0.8 }}
     transition={{ duration: 0.8 }}
     className="p-6 flex flex-col justify-center items-center bg-gray-300  w-full ">
-      <div className="text-xl font-poppins font-bold title-home-section">Why Chosee</div>
+      <div 
+      id="why-chosee"
+      className="text-xl font-poppins font-bold title-home-section">Why Chosee</div>
       <div className="text-4xl title-home-section text-gray-100 mb-6 text-center font-display font-semibold">
         <span className="text-gray-100">¿Por qué</span> 
         <span className="title-home-section"> elegir a Iván?</span>

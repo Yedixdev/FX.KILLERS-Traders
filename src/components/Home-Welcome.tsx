@@ -6,8 +6,9 @@ import BlurIn from "./ui/blur-in";
 
 const Welcome = () => {
   return (
-    <div>
-    <div className="w-full h-[630px] flex justify-center  relative">
+    <div 
+    id="home-welcome"
+    className="w-full h-[630px] flex justify-center  relative">
       <motion.div
         className="bg-gray-300 h-[450px] max-w-[1000px] lg:w-[1000px] xl:w-[1000px]  rounded-xl  flex flex-col items-center"
         initial={{ opacity: 0, y: 50 }}  
@@ -15,20 +16,20 @@ const Welcome = () => {
         transition={{ duration: 1, ease: "easeOut" }}  
       >
         {/* Clasificación */}
-         <motion.div
+        <motion.div
             className="mt-5 font-poppins"
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-         >
+        >
             <ShimmerButton background="#135A3A">
-               <div className="flex gap-2 items-center">
+              <div className="flex gap-2 items-center">
                   <FaStar className="text-xl" />
                   <BlurIn className="font-poppins text-gray-100"
                   word="5/5 Clasificación"/>
-               </div>
+              </div>
             </ShimmerButton>
-         </motion.div>
+        </motion.div>
 
         {/* Título principal */}
         <motion.div
@@ -87,8 +88,6 @@ const Welcome = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 2, delay: 1 }}
       />
-      
-    </div>
     </div>
   );
 };

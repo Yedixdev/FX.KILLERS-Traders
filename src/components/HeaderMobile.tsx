@@ -54,8 +54,7 @@ const HeaderMobile = () => {
       >
         <Link
           to="/contact"
-          className="bg-yellow-600 text-gray-100 px-8 py-1 rounded-full font-medium hover:bg-black transition duration-300 shadow-md shadow-gray-800 hover:shadow-black"
-        >
+          className=" btn-about-us text-gray-50 px-10 py-3 font-poppins rounded-full">
           Confirm Us
         </Link>
       </motion.div>

@@ -1,24 +1,22 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import DataTestimonials from "@/data/DataTestimonials";
-import TestimonialsPagination from "./Home-TestimonialPagination";
 import HomeAvatar from "./Home-TestimonialAvatar";
 
 const Testimonials: React.FC = () => {
-  const itemsPerPage = 9;
-  const [currentPage, setCurrentPage] = useState(1);
+  const [visibleCount, setVisibleCount] = useState(9);
 
-  const totalItems = DataTestimonials.length;
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const endIndex = startIndex + itemsPerPage;
-  const currentTestimonials = DataTestimonials.slice(startIndex, endIndex);
-
-  const handlePageChange = (newPage: number) => {
-    setCurrentPage(newPage);
+  const handleShowMore = () => {
+    setVisibleCount((prevCount) => prevCount + 9);
   };
 
+  const handleShowLess = ()  => {
+    setVisibleCount((prevCount) => Math.max(prevCount - 9, 9)); 
+  };
+ 
   return (
     <motion.div
+      id="testimonials-section"
       initial={{ opacity: 0, y: -50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
@@ -33,7 +31,7 @@ const Testimonials: React.FC = () => {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 auto-rows-fr">
-        {currentTestimonials.map((testimonial, index) => {
+        {DataTestimonials.slice(0, visibleCount).map((testimonial, index) => {
           const bgColor = {
             green: "bg-green1 text-white",
             yellow: "bg-yellow-500 text-black",
@@ -45,7 +43,7 @@ const Testimonials: React.FC = () => {
               key={index}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.5 }}
+              viewport={{ once: false, amount: 0.2 }}
               transition={{
                 duration: 0.6,
                 delay: index * 0.1,
@@ -74,18 +72,29 @@ const Testimonials: React.FC = () => {
         })}
       </div>
 
-      <div className="mt-6">
-        <TestimonialsPagination
-          totalItems={totalItems}
-          itemsPerPage={itemsPerPage}
-          currentPage={currentPage}
-          onPageChange={handlePageChange}
-        />
+      <div className="flex justify-center space-x-4 mt-6">
+        {visibleCount < DataTestimonials.length && (
+          <button
+            onClick={handleShowMore}
+            className="flex items-center justify-center bg-yellow-600 hover:bg-yellow-500 text-white font-poppins rounded-full py-2 px-4 transition duration-300 ease-in-out"
+          >
+            Mostrar más
+          </button>
+        )}
+
+        {visibleCount > 9 && (
+          <button
+            onClick={handleShowLess}
+            className="flex items-center justify-center bg-gray-400 hover:bg-gray-300 text-gray-800 rounded-full py-2 px-4 transition duration-300 ease-in-out"
+          >
+            Mostrar menos
+          </button>
+        )}
       </div>
+
       <HomeAvatar />
     </motion.div>
   );
 };
 
 export default Testimonials;
-
