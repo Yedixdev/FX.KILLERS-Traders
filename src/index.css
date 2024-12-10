@@ -69,18 +69,19 @@
   font-weight: 600;
   background-size: 200% 100%;
   text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3); 
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
 }
-
 
 .btn-about-us {
   background: linear-gradient(90deg, #000000, #555555, #000000, #000000);
   background-size: 200% 100%;
   font-size: 18px;
   text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
-  animation: gradientEffect 4s ease-in-out infinite, shadowEffect 4s ease-in-out infinite;
-  transition: transform 2s ease, box-shadow 2s ease, background-color 2s ease, color 2s ease, font-weight 2s ease, background-size 2s ease;
-  border-radius: 8px; 
+  animation: gradientEffect 4s ease-in-out infinite,
+    shadowEffect 4s ease-in-out infinite;
+  transition: transform 2s ease, box-shadow 2s ease, background-color 2s ease,
+    color 2s ease, font-weight 2s ease, background-size 2s ease;
+  border-radius: 8px;
 }
 
 .btn-about-us:hover {
@@ -89,9 +90,21 @@
   font-weight: 600;
   background-size: 200% 100%;
   text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3); 
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
 }
 
+.btn-bg-black {
+  background: linear-gradient(90deg, #000000, #555555, #000000, #000000);
+  background-size: 200% 100%;
+  font-size: 18px;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+  animation: gradientEffect 4s ease-in-out infinite,
+    shadowEffect 4s ease-in-out infinite;
+  transition: transform 2s ease, box-shadow 2s ease, background-color 2s ease,
+    color 2s ease, font-weight 2s ease, background-size 2s ease;
+  border-radius: 8px;
+  color: #ebebeb;
+}
 
 /* Estilos para los titulos verdes  --------------------------------------------- */
 /* */
@@ -169,8 +182,10 @@
   color: transparent; /* Ocultamos el texto por defecto */
   background-clip: text; /* Aplicamos el degradado al texto */
   -webkit-background-clip: text; /* Compatibilidad para navegadores basados en WebKit */
-  animation: gradientEffect 4s ease-in-out infinite, shadowEffect 4s ease-in-out infinite;
+  animation: gradientEffect 4s ease-in-out infinite,
+    shadowEffect 4s ease-in-out infinite;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-  transition: transform 2s ease, box-shadow 2s ease, background-color 2s ease, color 2s ease, font-weight 2s ease, background-size 2s ease;
+  transition: transform 2s ease, box-shadow 2s ease, background-color 2s ease,
+    color 2s ease, font-weight 2s ease, background-size 2s ease;
   font-weight: bold;
 }
