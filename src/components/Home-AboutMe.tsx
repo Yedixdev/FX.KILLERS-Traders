@@ -1,14 +1,10 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-
+import { subscribe } from "@/services/subscription";
 const AboutMe = () => {
   const [email, setEmail] = useState<string>("");
   const [message, setMessage] = useState<string>("");
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
-
-  const API_KEY = "bZcfKqa3c7EDn2VhsDKY1Q";
-  const FORM_ID = "7439790";
-  const BASE_URL = "https://api.convertkit.com/v3/forms";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -21,22 +17,13 @@ const AboutMe = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch(`${BASE_URL}/${FORM_ID}/subscribe`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          api_key: API_KEY,
-          email: email,
-        }),
-      });
+      const response = await subscribe(email);
 
-      if (response.ok) {
+      if (response.success) {
         setMessage("¡Gracias por suscribirte!");
         setEmail("");
       } else {
-        setMessage("Hubo un error. Inténtalo nuevamente.");
+        setMessage(`Hubo un error: ${response.message}`);
       }
     } catch (error) {
       setMessage("Hubo un problema al enviar tu suscripción.");
