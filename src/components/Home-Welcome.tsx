@@ -3,8 +3,40 @@ import ShimmerButton from "./ui/shimmer-button";
 import { motion } from "framer-motion";
 import TypingAnimation from "./ui/typing-animation";
 import BlurIn from "./ui/blur-in";
+import React, { useState } from "react";
+import { subscribe } from "@/services/subscription"; // Asegúrate de que la ruta sea correcta
 
 const Welcome = () => {
+  const [email, setEmail] = useState<string>("");  
+  const [message, setMessage] = useState<string>("");  
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);  
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!email) {
+      setMessage("Por favor, ingresa tu correo.");
+      return;
+    }
+
+    setIsSubmitting(true); 
+
+    try {
+      const response = await subscribe(email);
+
+      if (response.success) {
+        setMessage("¡Gracias por suscribirte! Revisa tu correo para confirmar tu suscripción.");
+        setEmail(""); 
+      } else {
+        setMessage(`Hubo un error: ${response.message}`);
+      }
+    } catch (error) {
+      setMessage("Hubo un problema al enviar tu suscripción.");
+    } finally {
+      setIsSubmitting(false); 
+    }
+  };
+
   return (
     <div 
     id="home-welcome"
@@ -56,6 +88,7 @@ const Welcome = () => {
 
         {/* Formulario */}
         <motion.form
+          onSubmit={handleSubmit}
           className="relative z-10 flex sm:flex-row gap-2 justify-center bg-green2 p-3 m-3 rounded-2xl shadow-lg shadow-green1 "
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -64,6 +97,8 @@ const Welcome = () => {
           <input
           type="email"
           placeholder="Correo electrónico"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           required
           className="p-2 w-full sm:w-96 font-poppins rounded-xl text-gray-100 bg-transparent border-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent placeholder-yellow-500 transition duration-300 ease-in-out"
         />
@@ -75,6 +110,16 @@ const Welcome = () => {
             Suscríbete
           </button>
         </motion.form>
+
+        {message && (
+          <div
+            className={`${
+              message.includes("Gracias") ? "text-green-500" : "text-red-500"
+            } font-semibold text-center`}
+          >
+            {message}
+          </div>
+        )}
 
         <motion.div className="shadow-home-green bg-transparent w-[400px] max-w-3xl  rounded-full mt-24 "
         initial={{ opacity: 0, y: 50 }}
