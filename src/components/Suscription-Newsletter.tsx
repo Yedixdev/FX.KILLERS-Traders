@@ -1,15 +1,11 @@
 import { motion } from "framer-motion";
 import React, { useState } from "react";
+import { subscribe } from "@/services/subscription"; // Asegúrate de que la ruta sea correcta
 
 const Newsletter = () => {
   const [email, setEmail] = useState<string>("");  
   const [message, setMessage] = useState<string>("");  
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);  
-
-  const API_KEY = "bZcfKqa3c7EDn2VhsDKY1Q"; // Reemplaza con tu API Key
-  const ACCESS_TOKEN = "4xxRgN1sC5z7DTxsCMIeyQ2kFtovCWTAhP7ysyFuRl0"; // Reemplaza con tu token de acceso
-  const FORM_ID = "7439790"; // Reemplaza con tu Form ID
-  const BASE_URL = "https://api.convertkit.com/v3";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -22,24 +18,13 @@ const Newsletter = () => {
     setIsSubmitting(true); 
 
     try {
-      const response = await fetch(`${BASE_URL}/forms/${FORM_ID}/subscribe`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Authorization": `Bearer ${ACCESS_TOKEN}`,
-        },
-        body: JSON.stringify({
-          api_key: API_KEY,
-          email: email,
-        }),
-      });
+      const response = await subscribe(email);
 
-      if (response.ok) {
+      if (response.success) {
         setMessage("¡Gracias por suscribirte! Revisa tu correo para confirmar tu suscripción.");
         setEmail(""); 
       } else {
-        const errorData = await response.json();
-        setMessage(`Hubo un error: ${errorData.message}`);
+        setMessage(`Hubo un error: ${response.message}`);
       }
     } catch (error) {
       setMessage("Hubo un problema al enviar tu suscripción.");
