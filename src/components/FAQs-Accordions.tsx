@@ -72,7 +72,6 @@ const FAQsAccordions: React.FC = () => {
           </div>
         </div>
 
-        {/* Acordeones */}
         <motion.div
           className="flex flex-col gap-6 w-full md:w-[600px]"
           initial={{ opacity: 0, x: 50 }}
@@ -128,7 +127,6 @@ const FAQsAccordions: React.FC = () => {
             ))
           )}
 
-          {/* Botón para volver al video */}
           {selectedCategory !== null && (
             <button
               onClick={() => setSelectedCategory(null)}

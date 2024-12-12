@@ -106,10 +106,40 @@
   color: #ebebeb;
 }
 
-/* Estilos para los titulos verdes  --------------------------------------------- */
-/* */
+.plant-bg-black {
+  background: linear-gradient(
+    90deg,
+    #012b20,
+    hsl(56, 57%, 17%),
+    #012b20,
+    #012b20
+  );
+  background-size: 200% 100%;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+  animation: gradientEffect 6s ease-in-out infinite,
+    shadowEffect 6s ease-in-out infinite;
+  transition: transform 2s ease, box-shadow 2s ease, background-color 2s ease,
+    color 2s ease, font-weight 2s ease, background-size 2s ease;
+}
 
-/* Animación del gradiente */
+.plant-bg-yellow {
+  background: linear-gradient(90deg, #eab642, #c7a17c, #efdab8, #eab642);
+  background-size: 200% 100%;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+  animation: gradientEffect 4s ease-in-out infinite,
+    shadowEffect 4s ease-in-out infinite;
+}
+
+.plant-bg-yellow:hover {
+  /* Estilos para cuando el mouse está sobre el botón */
+  transform: scale(1.1); /* Aumenta el tamaño en un 10% */
+  filter: brightness(90%); /* Disminuye ligeramente el brillo */
+  animation: gradientEffectHover 4s ease-in-out infinite,
+    shadowEffectHover 4s ease-in-out infinite;
+  color: #ffffff;
+}
+
+/* Estilos para los titulos verdes  --------------------------------------------- */
 .title-home-section {
   background: linear-gradient(
     90deg,
