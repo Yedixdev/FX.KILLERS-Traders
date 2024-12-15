@@ -2,7 +2,18 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: "Poppins";
+}
+
+body {
+  background: linear-gradient(120deg, #e3ffe7, #d9e7ff); /* Fondo degradado */
+  background-size: cover; /* Asegura que el fondo cubra todo */
+  background-attachment: fixed; /* Fija el fondo al viewport */
+  background-repeat: no-repeat; /* Evita que el fondo se repita */
+  background-position: center; /* Centra el fondo */
+  margin: 0; /* Elimina márgenes del body */
+  padding: 0; /* Elimina padding del body */
+  color: #101010; /* Color de texto general */
 }
 
 @tailwind base;
@@ -64,11 +75,11 @@
     --chart-5: 340 75% 55%;
   }
 }
-@layer base {
+/* @layer base {
   * {
     @apply border-border;
   }
   body {
     @apply bg-background text-foreground;
   }
-}
+} */

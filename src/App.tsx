@@ -1,13 +1,14 @@
-import { Button } from './components/ui/button';
-import './App.css'
+import { BrowserRouter as Router } from 'react-router-dom';
+import Header from './components/Header'; 
+import AppRoutes from './AppRoutes';     
 
-function App() {
-
+const App = () => {
   return (
-    <>
-      <Button className="bg-blue-300 text-white hover:bg-blue-800">Click Me</Button>
-    </>
-  )
-}
+    <Router>
+      <Header />  
+        <AppRoutes />  
+    </Router>
+  );
+};
 
-export default App
+export default App;
