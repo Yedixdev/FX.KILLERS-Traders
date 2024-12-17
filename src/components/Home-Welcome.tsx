@@ -45,7 +45,6 @@ const Welcome = () => {
         animate={{ opacity: 1, y: 0 }}   
         transition={{ duration: 1, ease: "easeOut" }}  
       >
-        {/* Rating Section - Ajustado para móvil */}
         <motion.div
           className="w-full flex justify-center scale-90 sm:scale-100"
           initial={{ opacity: 0, y: -50 }}
