@@ -83,7 +83,6 @@
 
 .btn-about-us:hover {
   background: linear-gradient(90deg, #b69f57, #efd073, #7d6d3f, #b69f57);
-  font-weight: bold;
   background-size: 200% 100%;
   text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
   box-shadow: 0 5px 10px #1a1a1a;
