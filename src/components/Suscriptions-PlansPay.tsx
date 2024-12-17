@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from "framer-motion";
 import { FaCheck } from "react-icons/fa";
-import { BorderBeam } from "@/components/ui/border-beam";
+
 interface Plan {
   title: string;
   price: string;
@@ -81,7 +81,7 @@ const PlansPay: React.FC = () => {
       scale: 1,
       transition: {
         duration: 0.6,
-        delay: index === 1 ? 0 : 2,
+        delay: index === 1 ? 0 : 1,
         ease: "easeOut"
       }
     }),
@@ -120,7 +120,6 @@ return (
             }}
           >
             <div className="absolute inset-0">
-              <BorderBeam size={250} duration={25} delay={9} className="z-0 rounded-xl" />
             </div>
             <div className="relative z-10">
               <h2 className="text-2xl font-bold contact-home-highlight">{plan.title}</h2>

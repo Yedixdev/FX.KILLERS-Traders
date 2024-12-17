@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
+import { motion } from "framer-motion"
 
 const HomeWhyChosee = () => {
   const infoItems = [
@@ -39,13 +40,17 @@ const HomeWhyChosee = () => {
   const nextSlide = () => setCurrentIndex((prev) => (prev === infoItems.length - 1 ? 0 : prev + 1));
 
   return (
-    <div className="w-full max-w-[1200px] mx-auto flex flex-col items-center p-8 relative overflow-hidden">
+    <motion.div 
+      initial={{ opacity: 0, y: -50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: false, amount: 0.3 }}
+      transition={{ duration: 0.5 }}
+      className="w-full max-w-[1200px] mx-auto flex flex-col items-center p-8 relative overflow-hidden">
       <div className="py-4 text-center mb-6 text-gray-700 font-greatVibes title-home-section">
         <span className="text-gray-200  title-home-section text-5xl lg:6xl xl:text-7xl">Porque Elegirnos  </span>
       </div>
 
       <div className="relative w-full max-w-6xl h-64 flex items-center justify-center">
-        {/* Slides */}
         <div className="flex items-center justify-center w-full">
           {infoItems.map((item, index) => {
             const position = index - currentIndex;
@@ -84,7 +89,7 @@ const HomeWhyChosee = () => {
           <IoIosArrowForward className="text-2xl"/>
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
