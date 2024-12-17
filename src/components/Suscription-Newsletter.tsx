@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import React, { useState } from "react";
-import { subscribe } from "@/services/subscription"; // Asegúrate de que la ruta sea correcta
+import { subscribe } from "@/services/subscription";
 
 const Newsletter = () => {
   const [email, setEmail] = useState<string>("");  
