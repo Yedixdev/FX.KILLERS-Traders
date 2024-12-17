@@ -9,9 +9,10 @@ export default {
         green2: "#012b20",
         gray1: "#EAEAEA",
         gray2: "#333333",
-        yellow1: "#EAB642",
-        beige1: "#C7A17C",
-        beige2: "#EFDAB8",
+        beige1: "#b69f57",
+        beige2: "#efd073",
+        black1: "	#1a1a1a",
+        blue1: "#081628",
         greentext: "linear-gradient(to right, black, #052e16, black)",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
@@ -59,9 +60,8 @@ export default {
         greentext: "linear-gradient(to right, black, #052e16, black)",
       },
       fontFamily: {
-        display: ["Playfair Display", "serif"],
-        robo: ["Roboto", "sans-serif"],
-        poppins: ["Poppins", "sans-serif"],
+        greatVibes: ["Great Vibes", "cursive"], //Titulos
+        urbanist: ["Urbanist", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",

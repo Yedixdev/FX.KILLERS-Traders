@@ -34,16 +34,12 @@ const GlobalBrands: React.FC = () => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: false, amount: 0.3 }}
       transition={{ duration: 0.5 }}
-      className="bg-gradient-green h-auto w-full py-5 S flex flex-col items-center relative z-10 overflow-hidden"
+      className="bg-gradient-green h-auto w-full py-5 S flex flex-col items-center relative z-10 overflow-hidden  xl:text-[42px]"
     >
-      <div className='font-poppins contact-home-highlight font-bold lg:text-xl'>We Transport Confidence</div>
-      {/* Título */}
-      <div className="text-center ">
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-[42px] font-bold text-gray-200 font-display">
-          Confiamos en <span className="contact-home-highlight font-display">Marcas Globales</span>
+      <div className='font-urbanist contact-home-highlight font-semibold lg:text-xl'>We Transport Confidence</div>
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-6xl text-gray-200 font-greatVibes">
+          Confiamos en <span className="contact-home-highlight font-greatVibes py-4">Marcas Globales</span>
         </h2>
-      </div>
-
       {/* Logos con Marquee */}
       <motion.div
       initial={{ opacity: 0, scale: 0.3 }}
@@ -56,7 +52,7 @@ const GlobalBrands: React.FC = () => {
             {LogoItems.map((logo, index) => (
               <div
                 key={index}
-                className="w-32 sm:w-40 md:w-44 flex items-center justify-center bg-gradient-to-r from-black via-emerald-950 to-black px-4 py-2 mb-5 rounded-xl shadow-lg shadow-black transform transition-all duration-300 hover:scale-105"
+                className="w-32 sm:w-40 md:w-44 flex items-center justify-center bg-gradient-to-r from-black via-emerald-950 to-black px-4 py-2 mb-5 rounded-xl shadow-md shadow-black"
               >
                 <img
                   src={logo.src}
@@ -70,9 +66,14 @@ const GlobalBrands: React.FC = () => {
       </motion.div>
 
       <div className="flex flex-col justify-center items-center px-4 ">
-        <h3 className="text-2xl sm:text-3xl lg:text-4xl xl:text-[40px]  font-bold text-gray-100 flex gap-3 pb-5 font-display">
-          <span className="contact-home-highlight font-display pb-5">Programas</span> Destacados
-        </h3>
+        <div 
+          className="text-2xl sm:text-3xl lg:text-4xl xl:text-6xl text-gray-100 flex gap-3  font-greatVibes"
+        >
+          <span className="contact-home-highlight font-greatVibes py-1">
+            Programas
+          </span> 
+          <span className='py-1'>Destacados</span>
+        </div>
 
         <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -80,8 +81,6 @@ const GlobalBrands: React.FC = () => {
         viewport={{ once: false, amount: 0.2 }} 
         transition={{ delay:  1, duration: 1, ease: "easeOut"}}
         className="w-full max-w-md md:max-w-3xl bg-transparent rounded-2xl border-2 border-green-700 flex flex-col justify-around items-center p-2 xl:p-4 ">
-        
-
           {/* Bloque 1 */}
           <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -90,7 +89,7 @@ const GlobalBrands: React.FC = () => {
           transition={{ delay:  1, duration: 1, ease: "easeOut"}}
           className='flex items-center gap-5'>
             <div className="flex flex-col items-center gap-3">
-              <div className="w-32 h-24 bg-gradient-to-r from-black via-emerald-950 to-black rounded-xl shadow-lg flex flex-col justify-center items-center gap-2 text-gray-50 text-lg font-poppins">
+              <div className="w-32 h-24 bg-gradient-to-r from-black via-emerald-950 to-black rounded-xl shadow-lg flex flex-col justify-center items-center gap-2 text-gray-50 text-lg font-urbanist">
                 <FaBookOpen className="text-4xl sm:text-4xl" />
                 Learn
               </div>
@@ -98,28 +97,24 @@ const GlobalBrands: React.FC = () => {
 
             <FaPlus className="text-gray-50 text-3xl md:text-4xl" />
 
-            {/* Bloque 2 */}
             <div className="flex flex-col items-center gap-3">
-              <div className="w-32 h-24 bg-gradient-to-r from-black via-emerald-950 to-black rounded-xl shadow-lg flex flex-col justify-center items-center gap-2 text-gray-50  font-poppins">
+              <div className="w-32 h-24 bg-gradient-to-r from-black via-emerald-950 to-black rounded-xl shadow-lg flex flex-col justify-center items-center gap-2 text-gray-50 text-lg font-urbanist">
                 <FaDiscord className="text-4xl sm:text-4xl" />
                 Community
               </div>
             </div>
           </motion.div>
-       
-
-          {/* Descripción */}
           <div className="mt-6 text-center">
-            <h4 className="text-xl md:text-2xl font-semibold text-gray-50 font-poppins">
+            <h4 className="text-xl md:text-2xl f text-gray-50 font-urbanist">
               Comunidad Premium + Curso
             </h4>
-            <p className="text-gray-50 mt-3 font-poppins flex  flex-col">
+            <p className="text-gray-50 text-xl mt-3 font-urbanist flex  flex-col">
               Accelerate your Business Success with a Powerful Combination of
-              <span className="text-yellow-500 font-semibold"> Learning, Community, and Live Insights.</span>
+              <span className="text-beige1 font-semibold"> Learning, Community, and Live Insights.</span>
             </p>
             <Link
               to="/contact"
-              className="btn-about-us mt-5 inline-block text-gray-50 px-10 py-2 font-poppins rounded-xl"
+              className="btn-about-us mt-5 inline-block text-gray-50 px-10 py-2 font-urbanist rounded-xl"
             >
               Confirm Us
             </Link>
