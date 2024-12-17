@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 const HeaderMobile = () => {
   return (
     <motion.nav
-      className='lg:hidden flex p-10 flex-col items-center gap-4 font-urbanist text-xl text-blue1 font-bold l bg-gradient-to-br from-[#fffbf4] to-[#7f99a9] shadow-md absolute w-full top-[65px] left-0 z-40'
+      className='lg:hidden flex p-10 flex-col items-center gap-4 font-urbanist text-xl text-blue1 font-bold bg-gradient-to-br from-[#fffbf4] to-[#7f99a9] shadow-md absolute w-full top-[65px] left-0 z-40'
       initial={{ opacity: 0, y: -30}} 
       animate={{ opacity: 1, y: 0 }} 
       transition={{ duration: 0.3, delay: 0.1 }} 

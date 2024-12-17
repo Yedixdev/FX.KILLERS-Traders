@@ -37,7 +37,7 @@ const GlobalBrands: React.FC = () => {
       className="bg-gradient-green h-auto w-full py-5 S flex flex-col items-center relative z-10 overflow-hidden  xl:text-[42px]"
     >
       <div className='font-urbanist contact-home-highlight font-semibold lg:text-xl'>We Transport Confidence</div>
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-6xl text-gray-200 font-greatVibes">
+        <h2 className="text-4xl sm:text-3xl lg:text-4xl xl:text-6xl text-gray-200 font-greatVibes">
           Confiamos en <span className="contact-home-highlight font-greatVibes py-4">Marcas Globales</span>
         </h2>
       {/* Logos con Marquee */}
@@ -67,7 +67,7 @@ const GlobalBrands: React.FC = () => {
 
       <div className="flex flex-col justify-center items-center px-4 ">
         <div 
-          className="text-2xl sm:text-3xl lg:text-4xl xl:text-6xl text-gray-100 flex gap-3  font-greatVibes"
+          className="text-4xl sm:text-3xl lg:text-4xl xl:text-6xl text-gray-100 flex gap-3  font-greatVibes"
         >
           <span className="contact-home-highlight font-greatVibes py-1">
             Programas
@@ -81,7 +81,6 @@ const GlobalBrands: React.FC = () => {
         viewport={{ once: false, amount: 0.2 }} 
         transition={{ delay:  1, duration: 1, ease: "easeOut"}}
         className="w-full max-w-md md:max-w-3xl bg-transparent rounded-2xl border-2 border-green-700 flex flex-col justify-around items-center p-2 xl:p-4 ">
-          {/* Bloque 1 */}
           <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -108,7 +107,7 @@ const GlobalBrands: React.FC = () => {
             <h4 className="text-xl md:text-2xl f text-gray-50 font-urbanist">
               Comunidad Premium + Curso
             </h4>
-            <p className="text-gray-50 text-xl mt-3 font-urbanist flex  flex-col">
+            <p className="text-gray-50 text-lg mt-3 font-urbanist flex  flex-col">
               Accelerate your Business Success with a Powerful Combination of
               <span className="text-beige1 font-semibold"> Learning, Community, and Live Insights.</span>
             </p>

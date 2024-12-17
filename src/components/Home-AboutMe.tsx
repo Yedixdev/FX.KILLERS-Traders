@@ -6,7 +6,7 @@ const AboutMe = () => {
   const [email, setEmail] = useState<string>("");  
   const [message, setMessage] = useState<string>("");  
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);  
-  const [isSubscribed, setIsSubscribed] = useState<boolean>(false); // Nuevo estado para controlar la visibilidad del formulario
+  const [isSubscribed, setIsSubscribed] = useState<boolean>(false); 
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
