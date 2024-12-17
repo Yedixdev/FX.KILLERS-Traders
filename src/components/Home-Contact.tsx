@@ -67,7 +67,7 @@ const AboutMe = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          className="p-3 w-96 font-poppins rounded-lg text-gray-800 border border-transparent focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent placeholder-gray-400 transition duration-300 ease-in-out"
+          className="p-3 w-96 font-poppins rounded-lg text-gray-800 border border-transparent focus:outline-none focus:ring-2 focus:ring-beige1 focus:border-transparent placeholder-gray-400 transition duration-300 ease-in-out"
         />
 
         <button
