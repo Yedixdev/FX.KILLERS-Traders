@@ -10,12 +10,7 @@ const Testimonial: React.FC = () => {
   const handleShowLess = () => setVisibleCount((prev) => Math.max(6, prev - 6));
 
   return (
-    <motion.div
-      id="testimonials-section"
-      initial={{ opacity: 0, y: -50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.8 }}
+    <div
       className="p-6 flex flex-col justify-center items-center bg-gradient-to-br from-[#fffbf4] to-[#7f99a9] lg:rounded-2xl my-10 h-auto w-full xl:w-[1250px] py-5 px-4 relative z-10 xl:rounded-2xl shadow-lg shadow-gray-400"
     > 
       <span className="font-urbanist font-semibold text-xl title-home-section text-center">Testimonials</span>
@@ -37,7 +32,7 @@ const Testimonial: React.FC = () => {
               key={index}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.2 }}
+              viewport={{ once: false, amount: 0.5 }}
               transition={{
                 duration: 0.6,
                 delay: index * 0.1,
@@ -77,7 +72,7 @@ const Testimonial: React.FC = () => {
         )}
       </div>
       <HomeAvatar/>
-    </motion.div>
+    </div>
   );
 };
 
