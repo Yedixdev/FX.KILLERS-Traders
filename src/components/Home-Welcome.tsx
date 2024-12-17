@@ -1,34 +1,30 @@
 import { FaStar } from "react-icons/fa";
 import ShimmerButton from "./ui/shimmer-button";
 import { motion } from "framer-motion";
-import TypingAnimation from "./ui/typing-animation";
 import BlurIn from "./ui/blur-in";
 import React, { useState } from "react";
-import { subscribe } from "@/services/subscription"; // Asegúrate de que la ruta sea correcta
+import { subscribe } from "@/services/subscription"; 
+import TypingAnimation from "./ui/typing-animation";
 
 const Welcome = () => {
   const [email, setEmail] = useState<string>("");  
   const [message, setMessage] = useState<string>("");  
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);  
-  const [isSubscribed, setIsSubscribed] = useState<boolean>(false); // Nuevo estado para controlar la visibilidad del formulario
+  const [isSubscribed, setIsSubscribed] = useState<boolean>(false); 
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
     if (!email) {
       setMessage("Por favor, ingresa tu correo.");
       return;
     }
-
     setIsSubmitting(true); 
-
     try {
       const response = await subscribe(email);
-
       if (response.success) {
         setMessage("¡Gracias por suscribirte! Revisa tu correo para confirmar tu suscripción.");
         setEmail(""); 
-        setIsSubscribed(true); // Ocultar el formulario y mostrar el mensaje de agradecimiento
+        setIsSubscribed(true);
       } else {
         setMessage(`Hubo un error: ${response.message}`);
       }
@@ -41,102 +37,95 @@ const Welcome = () => {
 
   return (
     <div 
-    id="home-welcome"
-    className="w-full h-[630px] flex justify-center  relative">
+      id="home-welcome"
+      className="w-full flex items-center justify-center relative">
       <motion.div
-        className="bg-gray-300 h-[450px] max-w-[1000px] lg:w-[1000px] xl:w-[1000px]  rounded-xl  flex flex-col items-center"
+        className="w-[90%] sm:w-[85%] md:w-[80%] max-w-[1000px] rounded-xl flex flex-col items-center gap-4 p-4 sm:p-6 md:p-8"
         initial={{ opacity: 0, y: 50 }}  
         animate={{ opacity: 1, y: 0 }}   
         transition={{ duration: 1, ease: "easeOut" }}  
       >
-        {/* Clasificación */}
+        {/* Rating Section - Ajustado para móvil */}
         <motion.div
-            className="mt-5 font-poppins"
-            initial={{ opacity: 0, y: -50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+          className="w-full flex justify-center scale-90 sm:scale-100"
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
         >
-            <ShimmerButton background="#135A3A">
-              <div className="flex gap-2 items-center">
-                  <FaStar className="text-xl" />
-                  <BlurIn className="font-poppins text-gray-100"
-                  word="5/5 Clasificación"/>
-              </div>
-            </ShimmerButton>
+          <ShimmerButton background="#135A3A">
+            <div className="flex items-center gap-2 px-2">
+              <FaStar className="text-xl sm:text-2xl" />
+              <BlurIn 
+                className="font-urbanist text-base sm:text-xl text-gray-100"
+                word="5/5 Clasificación"
+              />
+            </div>
+          </ShimmerButton>
         </motion.div>
 
-        {/* Título principal */}
+        {/* Title Section - Mejorado para móvil */}
         <motion.div
-          className="title-home-section text-4xl md:text-5xl lg:text-4xl xl:text-5xl font-bold font-display text-center relative z-10 px-5"
+          className="flex flex-col items-center gap-2 sm:gap-4 -mt-2 sm:mt-0"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
-          FK KILLERS <span className="text-gray-100">TRADING HOUSE</span>
+          <h1 className="title-home-section font-greatVibes  text-6xl md:text-7xl  xl:text-[180px] text-center py-4">
+            Fx Killers
+          </h1>
+          <p className="font-urbanist text-base sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-center text-blue1 relative z-10">
+            TRADE <span className="text-xl sm:text-2xl">TRUST</span> TRANSFORM
+          </p>
         </motion.div>
-
-        {/* Subtítulo */}
-        <motion.div
-          
+         <motion.div
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
         >
           <TypingAnimation
-          className="font-poppins font-semibold text-base md:text-xl xl:text-2xl pt-5 text-center text-green1 relative z-10"
+          className="font-urbanist text-base md:text-xl xl:text-2xl text-center text-green1 relative z-10"
           text="Comunidad exclusiva + Educación Financiera"
           />
         </motion.div>
 
-        {/* Formulario */}
-        {isSubscribed ? (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="relative mt-5 p-4 bg-green-100 border border-green-400 text-green-700 rounded-xl flex items-center"
-          >
-            <span className="mr-2 text-2xl">🎉</span>
-            <span className="font-semibold">{message}</span>
-          </motion.div>
-        ) : (
-          <motion.form
-            onSubmit={handleSubmit}
-            className="relative z-10 flex sm:flex-row gap-2 justify-center bg-green2 p-3 m-3 rounded-2xl shadow-lg shadow-green1 "
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.7 }}
-          >
-            <input
-              type="email"
-              placeholder="Correo electrónico"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              className="p-2 w-full sm:w-96 font-poppins rounded-xl text-gray-100 bg-transparent border-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent placeholder-yellow-500 transition duration-300 ease-in-out"
-            />
-
-            <button
-              type="submit"
-              className="contact-btn-form-home px-6 py-3 rounded-xl transition duration-300 ease-in-out transform hover:scale-105 bg-yellow1 text-white font-semibold hover:shadow-md hover:shadow-gray-950"
+        <div className="w-full max-w-2xl mx-auto px-2 sm:px-4">
+          {isSubscribed ? (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="relative p-3 sm:p-4 bg-green-100 border border-green-400 text-green-700 rounded-xl flex items-center justify-center gap-2"
             >
-              Suscríbete
-            </button>
-          </motion.form>
-        )}
-
-        <motion.div className="shadow-home-green bg-transparent w-[400px] max-w-3xl  rounded-full mt-24 "
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 2, delay: 1 }}></motion.div>
+              <span className="text-xl sm:text-2xl">🎉</span>
+              <span className="font-semibold text-sm sm:text-base">{message}</span>
+            </motion.div>
+          ) : (
+            <motion.form
+              onSubmit={handleSubmit}
+              className="relative flex gap-2 sm:gap-3 justify-center bg-blue1 p-3 sm:p-4 rounded-2xl shadow-md z-0"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.7 }}
+            >
+              <input
+                type="email"
+                placeholder="Correo electrónico"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                className="p-2 sm:p-3 w-full font-urbanist rounded-xl text-gray-100 bg-transparent focus:outline-none focus:ring-2 focus:ring-beige1 focus:border-transparent placeholder-beige2 transition duration-300 relative z-10 text-sm sm:text-base"
+              />
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="contact-btn-form-home whitespace-nowrap px-4 sm:px-6 py-2 sm:py-3 rounded-xl transition duration-300 bg-yellow1 text-white hover:shadow-md hover:shadow-gray-950 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed text-xs"
+              >
+                {isSubmitting ? 'Enviando...' : 'Suscríbete'}
+              </button>
+            </motion.form>
+          )}
+        </div>
       </motion.div>
-
-      <motion.div
-        className="bg-black w-[70%] h-72 max-w-3xl rounded-xl  absolute bottom-8 sm:bottom-20 md:bottom-6 lg:bottom-16"
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 2, delay: 1 }}
-      />
     </div>
   );
 };

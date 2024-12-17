@@ -23,9 +23,9 @@ const Testimonials: React.FC = () => {
       transition={{ duration: 0.8 }}
       className="p-6 flex flex-col justify-center items-center bg-gray-300 lg:rounded-2xl my-10 h-auto w-full xl:w-[1250px] py-5 px-4 relative z-10 xl:rounded-2xl"
     >
-      <span className="font-poppins font-semibold text-xl title-home-section">Testimonials</span>
+      <span className="font-urbanist font-semibold text-xl title-home-section">Testimonials</span>
 
-      <div className="text-4xl font-bold text-center mb-6 text-gray-700 font-display title-home-section">
+      <div className="text-6xl py-4 text-center mb-6 text-gray-700 font-greatVibes title-home-section">
         <span className="text-gray-200">Testimonios de </span>
         <span className="text-gray-200 title-home-section">Nuestros Usuarios</span>
       </div>
@@ -33,8 +33,8 @@ const Testimonials: React.FC = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 auto-rows-fr">
         {DataTestimonials.slice(0, visibleCount).map((testimonial, index) => {
           const bgColor = {
-            green: "bg-green1 text-white",
-            yellow: "bg-yellow-500 text-black",
+            green: "bg-blue1 text-white",
+            yellow: "bg-green1 text-black",
             gray: "bg-gray-400 text-black",
           }[testimonial.color];
 
@@ -76,7 +76,7 @@ const Testimonials: React.FC = () => {
         {visibleCount < DataTestimonials.length && (
           <button
             onClick={handleShowMore}
-            className="flex items-center justify-center bg-yellow-600 hover:bg-yellow-500 text-white font-poppins rounded-full py-2 px-4 transition duration-300 ease-in-out"
+            className="flex items-center justify-center bg-yellow-600 hover:bg-yellow-500 text-white font-urbanist rounded-full py-2 px-4 transition duration-300 ease-in-out"
           >
             Mostrar más
           </button>
