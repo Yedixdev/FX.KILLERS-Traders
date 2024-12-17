@@ -1,11 +1,7 @@
-/* Fonts Playfair Display (titulos)*/
-@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=MuseoModerno:ital,wght@0,100..900;1,100..900&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+/*Titulos*/
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=MuseoModerno:ital,wght@0,100..900;1,100..900&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
 
-/* Fonts Poppins (cuerpo de texto) */
-@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=MuseoModerno:ital,wght@0,100..900;1,100..900&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
-
-/* Fonts Roboto (cuerpo de texto) */
-@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=MuseoModerno:ital,wght@0,100..900;1,100..900&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=MuseoModerno:ital,wght@0,100..900;1,100..900&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -14,10 +10,10 @@
 .contact-home-highlight {
   background: linear-gradient(
     90deg,
-    #eab642,
-    #ffd1a4,
-    #ffe0aa,
-    #e7b209
+    #b69f57,
+    #ffdb6e,
+    #fffbef,
+    #b69f57
   ); /* Gradiente con los colores proporcionados */
   background-size: 200% 100%; /* Hace que el gradiente se mueva */
   -webkit-background-clip: text; /* Aplica el gradiente solo al texto */
@@ -55,42 +51,43 @@
 
 /* Boton con el estilo amarillo --------------------------------------------------- */
 .contact-btn-form-home {
-  background: linear-gradient(90deg, #eab642, #c7a17c, #efdab8, #eab642);
+  background: linear-gradient(90deg, #b69f57, #c7a17c, #efdab8, #b69f57);
   background-size: 200% 100%;
   color: #101010;
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 600;
   text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
   animation: gradientEffect 4s ease-in-out infinite,
     shadowEffect 4s ease-in-out infinite;
 }
 .contact-btn-form-home:hover {
   color: #dddddd;
-  font-weight: 600;
   background-size: 200% 100%;
   text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
 }
 
 .btn-about-us {
-  background: linear-gradient(90deg, #000000, #555555, #000000, #000000);
+  background: linear-gradient(90deg, #081628, #b69f57, #101010, #081628);
   background-size: 200% 100%;
   font-size: 18px;
   text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
-  animation: gradientEffect 4s ease-in-out infinite,
-    shadowEffect 4s ease-in-out infinite;
-  transition: transform 2s ease, box-shadow 2s ease, background-color 2s ease,
-    color 2s ease, font-weight 2s ease, background-size 2s ease;
+  animation: gradientEffect 8s ease-in-out infinite,
+    shadowEffect 8s ease-in-out infinite;
+  transition: transform 0.2s ease, box-shadow 0.2s ease,
+    background-color 0.2s ease, color 0.2s ease, font-weight 0.2s ease,
+    background-size 0.2s ease;
   border-radius: 8px;
+  box-shadow: 0 0 15px 0 #1a1a1a;
 }
 
 .btn-about-us:hover {
-  background: linear-gradient(90deg, #eab642, #c7a17c, #efdab8, #eab642);
-  color: #000000;
-  font-weight: 600;
+  background: linear-gradient(90deg, #b69f57, #efd073, #7d6d3f, #b69f57);
+  font-weight: bold;
   background-size: 200% 100%;
   text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 10px #1a1a1a;
+  transform: translateY(-5px);
 }
 
 .btn-bg-black {
@@ -141,13 +138,7 @@
 
 /* Estilos para los titulos verdes  --------------------------------------------- */
 .title-home-section {
-  background: linear-gradient(
-    90deg,
-    #135a3a,
-    /* green1 */ #eab642,
-    /* yellow1 */ #012b20,
-    /* green2 */ #135a3a /* beige1 */
-  ); /* Gradiente con colores destacados */
+  background: linear-gradient(90deg, #135a3a, #b69f57, #012b20, #135a3a);
   background-size: 400% 100%; /* Hace que el movimiento del gradiente sea más notable */
   -webkit-background-clip: text;
   color: transparent; /* El texto es visible solo a través del gradiente */
@@ -182,24 +173,24 @@
 
 /*Sombre home verde-------------------------------------------------*/
 .shadow-home-green {
-  box-shadow: 0 0 150px 200px rgba(19, 90, 58, 0.6); /* Sombra inicial */
+  box-shadow: 0 0 150px 300px #081628; /* Sombra inicial */
   animation: pulsate-shadow 3s infinite; /* Animación continua */
 }
 
 @keyframes pulsate-shadow {
   0% {
-    box-shadow: 0 0 150px 200px rgba(19, 90, 58, 0.6); /* Estado inicial */
+    box-shadow: 0 0 150px 200px #081628; /* Estado inicial */
   }
   50% {
-    box-shadow: 0 0 180px 230px rgba(19, 90, 58, 0.8); /* Más intensa */
+    box-shadow: 0 0 180px 180px #081628; /* Más intensa */
   }
   100% {
-    box-shadow: 0 0 150px 200px rgba(19, 90, 58, 0.6); /* Vuelve al inicio */
+    box-shadow: 0 0 150px 200px #081628; /* Vuelve al inicio */
   }
 }
 
 .shadow-programs {
-  box-shadow: 0 0 150px 120px rgba(50, 154, 107, 0.715); /* Sombra inicial */
+  box-shadow: 0 0 150px 120px rgba(0, 1, 1, 0.715); /* Sombra inicial */
   width: 300px;
 }
 .shadow-about-me {
@@ -218,4 +209,14 @@
   transition: transform 2s ease, box-shadow 2s ease, background-color 2s ease,
     color 2s ease, font-weight 2s ease, background-size 2s ease;
   font-weight: bold;
+}
+
+/*fondo gradiantes*/
+.gradient-bg-1 {
+  background: linear-gradient(
+    to bottom,
+    #f5f5f5,
+    /* Gris arriba */ #e2e2e2,
+    /* Gris medio */ #94a9b9 /* Gris abajo */
+  );
 }
