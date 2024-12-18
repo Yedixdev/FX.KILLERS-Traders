@@ -35,7 +35,7 @@ const Newsletter = () => {
 
   return (
     <motion.div
-      className="xl:w-[1250px] bg-gradient-green h-auto mx-auto lg:rounded-2xl flex flex-col py-5 mt-5 justify-center items-center"
+      className="xl:w-[1250px] bg-green1 h-auto mx-auto lg:rounded-2xl flex flex-col py-5 mt-5 justify-center items-center"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: false, amount: 0.3 }}
@@ -49,10 +49,10 @@ const Newsletter = () => {
         className="flex flex-col justify-center items-center gap-4"
       >
         <div className="relative z-10 font-poppins text-xl font-semibold contact-home-highlight">Newsletter</div>
-        <div className="text-3xl sm:text-5xl font-bold font-display text-gray-300 text-center relative z-10">
-          <span className="contact-home-highlight">Mantente</span> en contacto
+        <div className="text-3xl sm:text-6xl font-greatVibes  text-gray-100 text-center relative z-10">
+          <span className="contact-home-highlight py-3">Mantente</span> en contacto
         </div>
-        <div className="font-poppins text-gray-300 text-center">Suscribete a nuestro email para recibir las últimas actualizaciones y ofertas exclusivas.</div>
+        <div className="font-poppins text-gray-100 text-center">Suscribete a nuestro email para recibir las últimas actualizaciones y ofertas exclusivas.</div>
       </motion.div>
 
       {message && (
@@ -83,7 +83,7 @@ const Newsletter = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            className="p-3 w-full sm:w-96 font-poppins rounded-xl text-gray-100 bg-transparent border-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent placeholder-yellow-500 transition duration-300 ease-in-out"
+            className="p-3 w-full sm:w-96 font-poppins rounded-xl text-gray-100 bg-transparent border-beige-1 focus:outline-none focus:ring-2 focus:ring-beige1 focus:border-transparent placeholder-beige2 transition duration-300 ease-in-out"
           />
           <motion.button
             type="submit"
