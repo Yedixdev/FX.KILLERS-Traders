@@ -1,10 +1,6 @@
-import { FaStar } from "react-icons/fa";
-import ShimmerButton from "./ui/shimmer-button";
 import { motion } from "framer-motion";
-import BlurIn from "./ui/blur-in";
 import React, { useState } from "react";
 import { subscribe } from "@/services/subscription"; 
-import TypingAnimation from "./ui/typing-animation";
 
 const Welcome = () => {
   const [email, setEmail] = useState<string>("");  
@@ -51,15 +47,7 @@ const Welcome = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <ShimmerButton background="#135A3A">
-            <div className="flex items-center gap-2 px-2">
-              <FaStar className="text-xl sm:text-2xl" />
-              <BlurIn 
-                className="font-urbanist text-base sm:text-xl text-gray-100"
-                word="5/5 Clasificación"
-              />
-            </div>
-          </ShimmerButton>
+          
         </motion.div>
 
         {/* Title Section - Mejorado para móvil */}
@@ -75,16 +63,6 @@ const Welcome = () => {
           <p className="font-urbanist text-base sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-center text-blue1 relative z-10">
             TRADE <span className="text-xl sm:text-2xl">TRUST</span> TRANSFORM
           </p>
-        </motion.div>
-         <motion.div
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-        >
-          <TypingAnimation
-          className="font-urbanist text-base md:text-xl xl:text-2xl text-center text-green1 relative z-10"
-          text="Comunidad exclusiva + Educación Financiera"
-          />
         </motion.div>
 
         <div className="w-full max-w-2xl mx-auto px-2 sm:px-4">
