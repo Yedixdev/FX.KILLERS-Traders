@@ -11,7 +11,7 @@ const Testimonial: React.FC = () => {
 
   return (
     <div
-      className="p-6 flex flex-col justify-center items-center bg-gradient-to-br from-[#fffbf4] to-[#7f99a9] lg:rounded-2xl my-10 h-auto w-full xl:w-[1250px] py-5 px-4 relative z-10 xl:rounded-2xl shadow-lg shadow-gray-400"
+      className="p-6 flex flex-col justify-center items-center bg-gradient-to-br from-[#fffbf4] to-[#7f99a9] lg:rounded-2xl my-10 h-auto w-full xl:w-[1250px] py-5 px-4 relative z-10 xl:rounded-2xl"
     > 
       <span className="font-urbanist font-semibold text-xl title-home-section text-center">Testimonials</span>
       <div className="py-4 text-center mb-6 text-gray-700 font-greatVibes title-home-section">

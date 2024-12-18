@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from "framer-motion";
 import { FaCheck } from "react-icons/fa";
-import { BorderBeam } from "@/components/ui/border-beam";
+
 interface Plan {
   title: string;
   price: string;
@@ -72,36 +72,34 @@ const PlansPay: React.FC = () => {
       opacity: 0,
       x: index === 1 ? 0 : index === 0 ? 100 : -100,
       y: index === 1 ? 100 : 0,
-      scale: index === 1 ? 0.1 : 1,
     }),
     visible: (index: number) => ({
       opacity: 1,
       x: 0,
       y: 0,
-      scale: 1,
       transition: {
         duration: 0.6,
-        delay: index === 1 ? 0 : 2,
+        delay: index === 1 ? 0 : 1,
         ease: "easeOut"
       }
     }),
   };
 return (
     <motion.div
-      className="xl:w-[1250px] bg-gradient-green h-auto mx-auto p-3 lg:rounded-2xl flex flex-col py-5 justify-center items-center"
+      className="xl:w-[1250px] bg-blue1 h-auto mx-auto p-3 lg:rounded-2xl flex flex-col py-5 justify-center items-center"
       initial={{ opacity: 0, y: -50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: false, amount: 0.3 }}
       transition={{ duration: 0.8 }}
     >
-      <span className="font-poppins font-semibold contact-home-highlight text-xl">
+      <span className="font-urbanist font-semibold contact-home-highlight text-xl">
         Suscriptions
       </span>
-      <div className="text-4xl font-display font-bold contact-home-highlight text-center pb-3">
+      <div className="text-6xl font-greatVibes contact-home-highlight text-center p-3">
         <span className="contact-home-highlight">Planes perfectos </span>
-        <span className="text-gray-200"> para tus necesidades:</span>
+        <span className="text-gray-200">  para tus necesidades:</span>
       </div>
-      <div className="font-poppins text-gray-200 text-center">
+      <div className="font-urbanist text-gray-200 text-center text-lg">
         Ofrecemos una gama de planes de precios flexibles diseñados para adaptarse a traders de todos los tamaños.
       </div>
       <div className="w-full flex flex-wrap justify-center gap-6 items-center mt-5">
@@ -113,20 +111,19 @@ return (
             initial="hidden"
             whileInView="visible"
             viewport={{ once: false, amount: 0.3 }}
-            className={`plant-bg-black text-white ${plan.height || "h-[450px]"} ${plan.width || "w-72"} rounded-2xl border-[1px] border-yellow-500 p-5 flex flex-col justify-between shadow-xl shadow-black relative`}
+            className={`bg-[#0a0c18] text-white ${plan.height || "h-[450px]"} ${plan.width || "w-72"} rounded-xl  p-5 flex flex-col justify-between shadow-xl relative`}
             whileHover={{ 
               scale: 1.05,
               transition: { duration: 0.2 }
             }}
           >
             <div className="absolute inset-0">
-              <BorderBeam size={250} duration={25} delay={9} className="z-0 rounded-xl" />
             </div>
             <div className="relative z-10">
               <h2 className="text-2xl font-bold contact-home-highlight">{plan.title}</h2>
               <p className="text-4xl font-bold mt-3">${plan.price} <span className="text-sm">{plan.period}</span></p>
-              {plan.tag && <p className="text-yellow-500 text-sm font-semibold mt-2">{plan.tag}</p>}
-              <ul className="text-sm mt-4 space-y-2">
+              {plan.tag && <p className="text-beige2 text-sm font-semibold mt-2">{plan.tag}</p>}
+              <ul className="text-sm mt-4 space-y-2 font-urbanist">
                 {plan.features.map((feature, featureIndex) => (
                   <motion.li
                     key={featureIndex}
@@ -135,7 +132,7 @@ return (
                     transition={{ delay: 0.1 * featureIndex }}
                     className="flex items-center gap-2"
                   >
-                    <FaCheck className="text-yellow-600 text-xl"/>
+                    <FaCheck className="text-beige2 text-xl"/>
                     {feature}
                   </motion.li>
                 ))}
@@ -144,7 +141,7 @@ return (
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="plant-bg-yellow border-2 border-yellow-600 text-black font-bold py-2 px-4 rounded-xl mt-5 relative z-10"
+              className="bg-gradient-to-l from-[#3f83f2] to-[#d7ad5e] text-black font-urbanist font-semibold py-2 px-4 rounded-xl mt-5 relative z-10"
             >
               {plan.buttonText}
             </motion.button>
